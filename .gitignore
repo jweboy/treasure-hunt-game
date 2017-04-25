@@ -3,7 +3,7 @@ node_modules/
 release/
 vendors/
 trash/
-static/
+static/*
 
 npm-debug.log
 yarn.lock
