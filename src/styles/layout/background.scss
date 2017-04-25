@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+.l-bg{
+    background: url('../imgs/bg.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.l-bg0{
+    background: url('../imgs/bg0.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.user{
+
+}
+.userlogo{
+    position: absolute;
+    left: 3.125%;
+    top: 1.29%;
+    width: 20%;
+    z-index: 20;
+}
+.userlogo img{
+    width: 100%;
+    height: 100%;
+}
+.usermsg{
+    position: absolute;
+    left: 13.3%;
+    top: 2.38%;
+    width: 51.5%;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+}
+.usermsg span{
+    margin-left: 25.8%;
+    font-size: 1em;
+}
+.user-progress{
+    width: 90%;
+    height: 28%;
+    background-color: #f74346;
+    border-radius: 5px;
+}
+.rightNav div{
+    z-index: 20;
+    position:absolute;
+    right: 6.25%;
+    width: 15%;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.navShop{
+    top: 12%;
+    background:url('../imgs/shangcheng.png');
+}
+.navBag{
+    top: 25.7%;
+    background:url('../imgs/beibao.png');
+}
+.navFriend{
+    top: 38.8%;
+    background:url('../imgs/haoyou.png');
+}
+
+.bottomNav div{
+    z-index: 20;
+    position:absolute;
+    bottom: 5%;
+    width: 15%;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+.navPeople{
+    left: 4.5%;
+    background:url('../imgs/renwu.png');
+}
+.navMsg{
+    left: 25%;
+    background:url('../imgs/xiaoxi.png');
+}
+.navNews{
+    left: 45%;
+    background:url('../imgs/dongtai.png');
+}
+.navSetting{
+    left: 65.5%;
+    background:url('../imgs/shezhi.png');
+}
+
+.chest0{
+    position: absolute;
+    width: 16.8%;
+    left: 12.2%;
+    display: none;
+}
+
+.l-bg div{
+    position: absolute;
+    width: 16.8%;
+    display: none;
+    background: url('../imgs/chest.png');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.l-bg div span{
+    font-size: 1.6em;
+    font-weight: 900;
+    color: #ffffff;
+    position: relative;
+    top: -46%;
+    left: 28%;
+    -webkit-text-stroke:1px #9e7c32;
+}
+.chest1{
+    left: 31.5%;
+}
+.chest2{
+    left: 53%;
+}
+.chest3{
+    left: 74.8%;
+}
+.chest4{
+    left: 62.2%;
+}
+.chest5{
+    left: 43.2%;
+}
+.chest6{
+    left: 25.5%;
+}
+
+.chestCover{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none;
+}
+
+.chestDialog{
+    position: fixed;
+    background: url('../imgs/chestDialog.png');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    width: 91.8%;
+    left: 4.1%;
+    top: 21%;
+}
+.chestDisplay{
+    position: absolute;
+    width: 30%;
+    left: 50%;
+    margin-left: -15%;
+}
+.chestCountdown{
+    position: absolute;
+    width: 30%;
+    left: 50%;
+    margin-left: -15%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 900;
+    color: #ffffff;
+    -webkit-text-stroke:2px #7c2120;
+}
+
+.chestItem{
+    position: absolute;
+}
+.chestItemImg{
+    width: 100%;
+    background: url('../imgs/beijing.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.chestItemImg img{
+    width: 100%;
+    height: 100%;
+}
+.chestItemImg span{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #FFFFFF;
+    display: none;
+}
+.chestItemDesc{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    color: #FFFFFF;
+    display: none;
+}
+.closeChestDialog{
+    position: absolute;
+    width: 36%;
+    left: 50%;
+    margin-left: -18%;
+    text-align: center;
+    font-size: 1.4em;
+    color: #000000;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    vertical-align: middle;
+    display: none;
+}
