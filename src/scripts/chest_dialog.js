@@ -1,12 +1,26 @@
 (function() {
     module.exports = {
-        countVal: 10,
-        init: function() {
+        countVal: 60,
+        closeCount: 3,
+        countInterval: 1000,
+        timeoutArray: [],
+        init: function(displayNum) {
             $('.chestDisplay').css({
-                top: Math.floor($('.chestDialog').height() * 140 / 602)
+                top: Math.floor($('.chestDialog').height() * 200 / 602),
+                marginLeft: '0',
+                left: '45%'
+            });
+            $('.playerDisplay').css({
+                top: Math.floor($('.chestDialog').height() * 150 / 602)
+            });
+            $('.chestOpenTxt').css({
+                top: Math.floor($('.chestDialog').height() * 100 / 602)
             });
             $('.chestCountdown').css({
-                top: Math.floor($('.chestDialog').height() * 320 / 602)
+                top: Math.floor($('.chestDialog').height() * 420 / 602)
+            });
+            $('.closeDialog').css({
+                top: - Math.floor($('.chestDialog').height() * 10 / 602)
             });
             $('.chestItem').css({
                 top: Math.floor($('.chestDialog').height() * 140 / 602),
@@ -21,104 +35,141 @@
             $('.chestItem .chestItemDesc').hide();
             $('.chestItem span').hide();
             $('.closeChestDialog').hide();
+            $('.chestDisplay').attr('src','imgs/chest1.png');
 
             $('.closeChestDialog').css({
                 top: Math.floor($('.chestDialog').height() * 460 / 602),
-                height: Math.floor($('.chestDialog').height() * 50 / 602)
+                height: Math.floor($('.chestDialog').height() * 80 / 602),
+                lineHeight: Math.floor($('.chestDialog').height() * 60 / 602)+'px'
             });
 
-            this.countVal = 10;
+            this.countVal = 60;
+            $('.playerDisplay').show();
             $('.chestCountdown').show();
-            $('.chestCountdown').text('10S');
+            $('.chestOpenTxt').show();
+            $('.chestCountdown').text('01:00');
+            $('.chestOpenTxt').text(displayNum+'号宝箱开启中...');
 
-            setTimeout(function(){
+            this.timeoutArray.push(
+                setTimeout(function(){
                 this.count();
-            }.bind(this), 1000);
+            }.bind(this), this.countInterval));
+
+            this.closeCount = 3;
 
             $('.closeChestDialog').click(function(){
-                $('.chestCover').hide();
-            });
+                this.closeDialog();
+            }.bind(this));
+            $('.closeDialog').click(function(){
+                this.closeDialog();
+            }.bind(this));
 
             $('.chestCover').show();
         },
         count: function(){
             this.countVal--;
             if(this.countVal >= 0){
-                $('.chestCountdown').text(this.countVal+'S');
-                setTimeout(function(){
+                var min = Math.floor(this.countVal/60);
+                var sec = Math.floor(this.countVal%60);
+                if(min<10) min='0'+min;
+                if(sec<10) sec='0'+sec;
+                var txt = min +':' + sec;
+
+                $('.chestCountdown').text(txt);
+
+                this.timeoutArray.push(
+                    setTimeout(function(){
                     this.count();
-                }.bind(this) , 1000);
+                }.bind(this) , this.countInterval));
             }
             else{
                 this.openChest();
             }
         },
         openChest: function(){
+            this.timeoutArray.push(
             setTimeout(function(){
-                $('.chestDisplay').attr('src','../imgs/chest2.png');
-            }, 300);
-            setTimeout(function(){
-                $('.chestDisplay').attr('src','../imgs/chest3.png');
-            }, 700);
-            setTimeout(function(){
-                $('.chestDisplay').attr('src','../imgs/chest4.png');
-            }, 1000);
-            setTimeout(function(){
+                $('.chestDisplay').attr('src','imgs/chest2.png');
+            }, 300));
+            this.timeoutArray.push(setTimeout(function(){
+                $('.chestDisplay').attr('src','imgs/chest3.png');
+            }, 700));
+            this.timeoutArray.push(setTimeout(function(){
+                $('.chestDisplay').attr('src','imgs/chest4.png');
+            }, 1000));
+            this.timeoutArray.push(setTimeout(function(){
+                $('.playerDisplay').hide();
+                $('.chestOpenTxt').hide();
                 this.displayChestItems();
-            }.bind(this), 1300);
+            }.bind(this), 1300));
         },
         displayChestItems: function(){
             $('.chestCountdown').hide();
             $('.chestDisplay').animate({
                 top: Math.floor($('.chestDialog').height() * 50 / 602),
                 width: '26%',
-                marginLeft: '-13%'
+                marginLeft: '-13%',
+                left: '50%'
             }, 'normal', 'linear', function(){
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(1,1);
-                }.bind(this), 300);
+                }.bind(this), 300));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(1,2);
-                }.bind(this), 600);
+                }.bind(this), 600));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(1,3);
-                }.bind(this), 900);
+                }.bind(this), 900));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(1,4);
-                }.bind(this), 1200);
+                }.bind(this), 1200));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(1,5);
-                }.bind(this), 1500);
+                }.bind(this), 1500));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(2,1);
-                }.bind(this), 1800);
+                }.bind(this), 1800));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(2,2);
-                }.bind(this), 2100);
+                }.bind(this), 2100));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(2,3);
-                }.bind(this), 2400);
+                }.bind(this), 2400));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(2,4);
-                }.bind(this), 2700);
+                }.bind(this), 2700));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     this.animateChestItem(2,5);
-                }.bind(this), 3000);
+                }.bind(this), 3000));
 
-                setTimeout(function(){
+                this.timeoutArray.push(setTimeout(function(){
                     $('.closeChestDialog').show();
-                }.bind(this), 3500);
+                    this.countToClose();
+                }.bind(this), 3500));
 
             }.bind(this));
+        },
+        countToClose: function(){
+            if(this.closeCount>=0){
+                $('.closeChestDialog').text('确定('+this.closeCount+'s)');
+                this.closeCount--;
+
+                this.timeoutArray.push(setTimeout(function(){
+                    this.countToClose();
+                }.bind(this), this.countInterval));
+            }
+            else{
+                this.closeDialog();
+            }
         },
         animateChestItem: function(row,cell){
 
@@ -144,6 +195,17 @@
                 height: imgHeight+'px',
                 padding: '5px'
             });
+        },
+        closeDialog: function(){
+            $('.chestCover').hide();
+            this.countVal= 0;
+            this.closeCount= 0;
+
+            var timeoutId = this.timeoutArray.pop();
+            while(timeoutId){
+                clearTimeout(timeoutId);
+                timeoutId = this.timeoutArray.pop();
+            }
         }
     }
 }());
