@@ -28,6 +28,11 @@
                 display: 'block'
             });
 
+            $('.user-progress').css({
+                marginTop: Math.floor($('.usermsg').width() * 9 / 332),
+                marginBottom: Math.floor($('.usermsg').width() * 9 / 332)
+            });
+
             $('.rightNav div').css({
                 height: $('.rightNav div').width(),
                 display: 'block'
