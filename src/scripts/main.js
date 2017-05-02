@@ -1,40 +1,43 @@
-(function() {
+(function () {
 
     var $ = require('jquery');
+    var music = require('./music_control');
+    music.init();
 
-    if(location.href.indexOf('fight')>0){
+    if (location.href.indexOf('fight') > 0) {
         var fightPage = require('./fight_page');
 
-        document.addEventListener('touchstart', function(e) {
+        document.addEventListener('touchstart', function (e) {
             e.preventDefault();
         }, false);
 
         fightPage.init();
     }
-    else{
+    else {
         var ISroll = require('iscroll');
+
 
         var PageScroll = require('./page_scroll');
         var pageLoad = require('./load_background');
 
         var chestDialog = require('./chest_dialog');
 
-        $(function() {
+        $(function () {
 
             var totalCount = 99;
             var outputStr = '';
-            for(i=1; i<=17; i++){
+            for (i = 1; i <= 17; i++) {
                 outputStr += '<li class="l-bg">';
 
-                for(j=1;j<=6;j++){
-                    if(totalCount<=0)
+                for (j = 1; j <= 6; j++) {
+                    if (totalCount <= 0)
                         break;
 
                     var displayNum = totalCount;
-                    if(totalCount<10)
-                        displayNum = '0'+totalCount;
+                    if (totalCount < 10)
+                        displayNum = '0' + totalCount;
 
-                    outputStr += '<div class="chest chest'+j+'" data="'+displayNum+'"><span>'+displayNum+'</span></div>';
+                    outputStr += '<div class="chest chest' + j + '" data="' + displayNum + '"><span>' + displayNum + '</span></div>';
                     totalCount--;
                 }
 
@@ -50,12 +53,17 @@
                 height: Math.floor($(window).height() * 600 / 1008)
             });
 
-            $('.chest').click(function(){
+            $('.chest').click(function (e) {
                 chestDialog.init($(this).attr('data'));
+
+                sounds.wait.play();
+                sounds.bg.stop();
+                sounds.open.mute();
+
             });
 
-            $('.navShop').click(function(){
-                location.href='fight.html';
+            $('.navShop').click(function () {
+                location.href = 'fight.html';
             });
         });
     }

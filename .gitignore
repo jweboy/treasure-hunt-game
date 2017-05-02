@@ -3,8 +3,10 @@ node_modules/
 release/
 vendors/
 trash/
-static/*
+static/**/*.*
+resource/
 
 npm-debug.log
 yarn.lock
 yarn-error.log
+.yarnclean
