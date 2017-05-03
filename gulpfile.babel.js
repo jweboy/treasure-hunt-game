@@ -144,7 +144,7 @@ gulp.task('minify-js', () => {
 
 // 注入 bundle.min.css 和 bundle.min.js
 gulp.task('inject-html', () => {
-    let target = gulp.src('src/index.html'),
+    let target = gulp.src('src/*.html'),
         assets = gulp.src(
             [
                 'release/styles/bundle.min.css',

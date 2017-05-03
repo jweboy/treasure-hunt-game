@@ -10,6 +10,8 @@
         closeCount: 3,
         timeEnd: false,
         isFail: false,
+        isSuccess: false,
+        isFight: false,
         init: function (displayNum) {
 
             $('.fight-scenes-cover').css({
@@ -76,6 +78,15 @@
 
             $('.chestItem .chestItemDesc').hide();
             $('.chestItem span').hide();
+
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    sounds.victory.mute();
+                    sounds.fail.mute();
+                    sounds.fight.play();
+                });
+            }, false);
+
         },
         hitPlay: function () {
             this.timer = setTimeout(function () {
@@ -111,6 +122,8 @@
                     });
                 }
 
+                this.isFight = true;
+
                 if (this.player1live > 0 && this.player2live < 0) {
 
                     sounds.victory.unmute();
@@ -120,6 +133,9 @@
 
                     this.gameOver();
                     this.timeEnd = true;
+                    this.isSuccess = true;
+                    this.isFight = false;
+
                     return;
                 }
 
@@ -136,6 +152,7 @@
                     this.countToClose();
 
                     this.isFail = true;
+                    this.isFight = false;
                     return;
                 }
 
@@ -173,6 +190,24 @@
                 $('.fight-scenes-cover').show();
 
                 $('#fightBtn').on('touchstart', function (e) {
+                    // console.log(this.isFail, this.isSuccess, this.isFight)
+
+                    if (this.isFail) {
+                        sounds.victory.mute();
+                        sounds.fail.play();
+                        sounds.fight.mute();
+                    }
+                    if (this.isSuccess) {
+                        sounds.victory.play();
+                        sounds.fail.mute();
+                        sounds.fight.mute();
+                    }
+                    if (this.isFight) {
+                        sounds.victory.mute();
+                        sounds.fail.mute();
+                        sounds.fight.play();
+                    }
+
                     sounds.victory.mute();
                     sounds.fail.mute();
                     sounds.fight.play();
@@ -199,11 +234,29 @@
                 }.bind(this));
 
                 $('#fightBtn').on('touchend', function () {
-                    sounds.victory.stop();
-                    sounds.fight.stop();
 
                     clearTimeout(this.timer);
                     this.resetPlayer();
+
+                    // console.log(this.isFail, this.isSuccess, this.isFight)
+
+                    if (this.isFail) {
+                        sounds.victory.mute();
+                        sounds.fail.play();
+                        sounds.fight.mute();
+                        return;
+                    }
+                    if (this.isSuccess) {
+                        sounds.victory.play();
+                        sounds.fail.mute();
+                        sounds.fight.mute();
+                        return;
+                    }
+
+                    sounds.victory.stop();
+                    sounds.fail.stop();
+                    sounds.fight.unmute();
+                    sounds.fight.play();
 
                 }.bind(this));
 

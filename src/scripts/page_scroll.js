@@ -13,6 +13,14 @@
                 e.preventDefault();
             }, false);
 
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    sounds.wait.stop();
+                    sounds.open.stop();
+                    sounds.bg.play();
+                });
+            }, false);
+
             document.addEventListener('touchstart', function () {
 
                 console.log($('.chestCover').css('display'))

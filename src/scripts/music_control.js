@@ -6,6 +6,7 @@
         musicExt: '.mp3',
         init: function (name) {
             buzz.defaults.formats = ['mp3'];
+            buzz.defaults.preload = true;
             global.sounds = {
                 bg: new buzz.sound(this.musicPath + 'box_page_bg'),
                 wait: new buzz.sound(this.musicPath + 'box_wait'),
