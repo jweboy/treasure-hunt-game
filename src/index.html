@@ -36,120 +36,1382 @@
 </head>
 
 <body>
-    <div class="user">
-        <div class="userlogo">
-            <img src="imgs/touxiang.png" alt="用户头像">
+    <!-- 首屏预加载图片 -->
+    <div class="preloadImg" id="preloadImg">
+        <div class="preloadImg__progress">
+            <div class="preloadImg__progress--full"></div>
+            <div class="preloadImg__progress--active" id="preloadProgress"></div>
         </div>
-        <div class="usermsg">
-            <span>微信名字</span>
-            <div class="user-progress">
-
+    </div>
+    <div id="resource">
+        <div class="user">
+            <div class="userlogo">
+                <img src="imgs/touxiang.png" alt="用户头像">
             </div>
-            <span>等级1级&nbsp;&nbsp;ID:123456</span>
+            <div class="usermsg">
+                <span>微信名字</span>
+                <div class="user-progress">
+
+                </div>
+                <span>等级1级&nbsp;&nbsp;ID:123456</span>
+            </div>
+        </div>
+        <div class="rightNav">
+            <div class="navShop" id="shopBtn"></div>
+            <div class="navBag" id="bagBtn"></div>
+            <div class="navFriend" id="friendBtn"></div>
+        </div>
+        <div class="bottomNav">
+            <div class="navPeople" id="characterBtn"></div>
+            <div class="navMsg" id="msgBtn"></div>
+            <div class="navNews" id="newsBtn"></div>
+            <div class="navSetting" id="settingBtn"></div>
+        </div>
+        <div class="chestCover">
+            <div class="chestDialog">
+                <img class="playerDisplay" src="imgs/ft_role1-in.gif">
+                <img class="chestDisplay" src="imgs/chest1.png">
+                <img class="closeDialog" src="imgs/close.png">
+                <div class="chestOpenTxt"></div>
+                <div class="chestCountdown"></div>
+                <div class="chestItems">
+                    <div class="chestItem row1 cell1">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_34.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">兽丹</div>
+                    </div>
+                    <div class="chestItem row1 cell2">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_27.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">灵石</div>
+                    </div>
+                    <div class="chestItem row1 cell3">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_11.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">疗伤药</div>
+                    </div>
+                    <div class="chestItem row1 cell4">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_61.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">练气遁符</div>
+                    </div>
+                    <div class="chestItem row1 cell5">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_65.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">金丹遁符</div>
+                    </div>
+
+                    <div class="chestItem row2 cell1">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_64.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">筑基遁符</div>
+                    </div>
+                    <div class="chestItem row2 cell2">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_59.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">筑基丹</div>
+                    </div>
+                    <div class="chestItem row2 cell3">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_60.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">结晶丹</div>
+                    </div>
+                    <div class="chestItem row2 cell4">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_78.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">神晶</div>
+                    </div>
+                    <div class="chestItem row2 cell5">
+                        <div class="chestItemImg">
+                            <img src="imgs/icon_62.png">
+                            <span>10</span>
+                        </div>
+                        <div class="chestItemDesc">追踪符</div>
+                    </div>
+                </div>
+                <div class="closeChestDialog">确定</div>
+            </div>
+        </div>
+        <div class="l-wrapper" id="wrapper">
+            <div class="l-scroll">
+                <ul id="scene">
+                    <li class="l-bg0">
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="rightNav">
-        <div class="navShop"></div>
-        <div class="navBag"></div>
-        <div class="navFriend"></div>
-    </div>
-    <div class="bottomNav">
-        <div class="navPeople"></div>
-        <div class="navMsg"></div>
-        <div class="navNews"></div>
-        <div class="navSetting"></div>
-    </div>
-    <div class="chestCover">
-        <div class="chestDialog">
-            <img class="playerDisplay" src="imgs/ft_role1-in.gif">
-            <img class="chestDisplay" src="imgs/chest1.png">
-            <img class="closeDialog" src="imgs/close.png">
-            <div class="chestOpenTxt"></div>
-            <div class="chestCountdown"></div>
-            <div class="chestItems">
-                <div class="chestItem row1 cell1">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_34.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">兽丹</div>
-                </div>
-                <div class="chestItem row1 cell2">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_27.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">灵石</div>
-                </div>
-                <div class="chestItem row1 cell3">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_11.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">疗伤药</div>
-                </div>
-                <div class="chestItem row1 cell4">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_61.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">练气遁符</div>
-                </div>
-                <div class="chestItem row1 cell5">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_65.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">金丹遁符</div>
-                </div>
+    <div>
 
-                <div class="chestItem row2 cell1">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_64.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">筑基遁符</div>
-                </div>
-                <div class="chestItem row2 cell2">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_59.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">筑基丹</div>
-                </div>
-                <div class="chestItem row2 cell3">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_60.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">结晶丹</div>
-                </div>
-                <div class="chestItem row2 cell4">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_78.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">神晶</div>
-                </div>
-                <div class="chestItem row2 cell5">
-                    <div class="chestItemImg">
-                        <img src="imgs/icon_62.png">
-                        <span>10</span>
-                    </div>
-                    <div class="chestItemDesc">追踪符</div>
+    </div>
+    <!-- settingDialog -->
+    <div class="settingDialog hidden" id="settingDialog">
+        <div class="settingDialog__box">
+            <div class="settingDialog__logo">
+                <img src="./imgs/touxiang.png" alt="">
+                <div class="settingDialog__user">
+                    <p>
+                        <span class="username">名称</span>
+                        <input class="settingDialog__username" type="text" placeholder="name">
+                    </p>
+                    <p>
+                        <span class="level">等级</span>
+                        <span class="levelDesc">练气五层</span>
+                    </p>
                 </div>
             </div>
-            <div class="closeChestDialog">确定</div>
+            <div class="settingDialog__desc">
+                <p>
+                    <span class="number">
+                        ID
+                    </span>
+                    <span class="numberDesc">
+                        ID123456
+                    </span>
+                </p>
+                <p>
+                    <span class="mobile">
+                        手机号码
+                    </span>
+                    <input class="settingDialog__mobile" type="number" placeholder="123456789">
+                </p>
+                <p>
+                    <span class="sound">
+                        音效
+                    </span>
+                    <div class="soudnDesc">
+                        <img class="off" id="switchSoundOn" src="imgs/sound_off.png" alt="">
+                        <img class="on hidden" id="switchSoundOff" src="imgs/sound_on.png" alt="">
+                    </div>
+                </p>
+            </div>
+        </div>
+        <div class="settingDialog__btn">
+            <a href="tel:123456">
+                <button>联系客服</button>
+            </a>
         </div>
     </div>
-    <div class="l-wrapper" id="wrapper">
-        <div class="l-scroll">
-            <ul id="scene">
-                <li class="l-bg0">
+    <!--newsDialog-->
+    <div class="commonDialog hidden" id="newsDialog">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>世界</span>
+            </div>
+            <div class="item">
+                <span>动态</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <ul class="chat">
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/touxiang.png" alt="">
+                        <div class="join">加好友</div>
+                    </div>
+                    <div class="right">
+                        <span class="username">用户名</span>
+                        <div class="bubble">
+                            你好!你好!你好!你好!你好!你好!你好!你好!
+                        </div>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/touxiang.png" alt="">
+                        <div class="join">加好友</div>
+                    </div>
+                    <div class="right">
+                        <span class="username">用户名</span>
+                        <div class="bubble">
+                            你好!你好!你好!你好!
+                        </div>>
+                    </div>
+                </li>
+                <li class="chat_item_user2">
+                    <div class="left">
+                        <div class="bubble1">
+                            你好!你好!你好!你好!你好!你好!你好!你好!
+                        </div>>
+                    </div>
+                    <div class="right">
+                        <img src="imgs/touxiang.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="commonDialog_footer">
+            <div class="speaker">
+                <img src="imgs/common_speak.png" alt="">
+                <span>4</span>
+            </div>
+            <input class="text" type="text">
+            <div class="send">发送</div>
+        </div>
+    </div>
+    <div class="commonDialog1 hidden" id="newsDialog1">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>世界</span>
+            </div>
+            <div class="item">
+                <span>动态</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <div class="news-list">
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+            </div>
+        </div>
+    </div>
+    <!--msgDialog-->
+    <div class="commonDialog msgDialog hidden" id="msgDialog">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>道具</span>
+            </div>
+            <div class="item">
+                <span>系统</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <ul class="chat">
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/touxiang.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>酷鱼</span>请求加你为好友
+                        </p>
+                        <div>
+                            <button class="agree">同意</button>
+                            <button class="refuse">拒绝</button>
+                        </div>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/touxiang.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>酷鱼</span>请求加你为好友
+                        </p>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
+    <div class="commonDialog1 msgDialog1 hidden" id="msgDialog1">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>消息</span>
+            </div>
+            <div class="item">
+                <span>系统</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <ul class="chat">
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/pennants.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>酷鱼</span>请求加你为好友
+                        </p>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/pennants.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>藏宝图</span>将于5月24日下线！将于5月24日下线！将于5月24日下线！
+                        </p>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--bagDialog-->
+    <div class="commonDialog bagDialog hidden" id="bagDialog">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>消息</span>
+            </div>
+            <div class="item">
+                <span>藏宝图</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <ul class="chat">
+                <li class="chat_item_user1">
+                    <div class="article">
+                        <img src="imgs/icon_64.png" alt="">
+                    </div>
+                    <p class="article_name">兽单</p>
+                    <p class="article_number">拥有x1000</p>
+                    <div class="buy">
+                        <img src="imgs/gem.png" alt="">
+                        <span>600</span>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="article">
+                        <img src="imgs/icon_64.png" alt="">
+                    </div>
+                    <p class="article_name">兽单</p>
+                    <p class="article_number">拥有x1000</p>
+                    <div class="buy">
+                        <img src="imgs/gem.png" alt="">
+                        <span>600</span>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="article">
+                        <img src="imgs/icon_64.png" alt="">
+                    </div>
+                    <p class="article_name">兽单</p>
+                    <p class="article_number">拥有x1000</p>
+                    <div class="buy">
+                        <img src="imgs/gem.png" alt="">
+                        <span>600</span>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="article">
+                        <img src="imgs/icon_64.png" alt="">
+                    </div>
+                    <p class="article_name">兽单</p>
+                    <p class="article_number">拥有x1000</p>
+                    <div class="buy">
+                        <img src="imgs/gem.png" alt="">
+                        <span>600</span>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="article">
+                        <img src="imgs/icon_64.png" alt="">
+                    </div>
+                    <p class="article_name">兽单</p>
+                    <p class="article_number">拥有x1000</p>
+                    <div class="buy">
+                        <img src="imgs/gem.png" alt="">
+                        <span>600</span>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="article">
+                        <img src="imgs/icon_64.png" alt="">
+                    </div>
+                    <p class="article_name">兽单</p>
+                    <p class="article_number">拥有x1000</p>
+                    <div class="buy">
+                        <img src="imgs/gem.png" alt="">
+                        <span>600</span>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="article">
+                        <img src="imgs/icon_64.png" alt="">
+                    </div>
+                    <p class="article_name">兽单</p>
+                    <p class="article_number">拥有x1000</p>
+                    <div class="buy">
+                        <img src="imgs/gem.png" alt="">
+                        <span>600</span>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="article">
+                        <img src="imgs/icon_64.png" alt="">
+                    </div>
+                    <p class="article_name">兽单</p>
+                    <p class="article_number">拥有x1000</p>
+                    <div class="buy">
+                        <img src="imgs/gem.png" alt="">
+                        <span>600</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="commonDialog_footer">
+            <img src="imgs/baoshi.png" alt="">
+            <span>0</span>
+        </div>
+    </div>
+    <div class="commonDialog1 bagDialog1 hidden" id="bagDialog1">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>道具</span>
+            </div>
+            <div class="item">
+                <span>藏宝图</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <div class="treasure_map">
+                <img class="debris4" src="imgs/debris4.png" alt="">
+                <img class="debris3" src="imgs/debris3_no.png" alt="">
+                <img class="debris2_no" src="imgs/debris2_no.png" alt="">
+                <img class="debris1_no" src="imgs/debris1_no.png" alt="">
+                <img class="debris5" src="imgs/debris5.png" alt="">
+                <img class="debris6" src="imgs/debris6.png" alt="">
+                <img class="debris7" src="imgs/debris7.png" alt="">
+                <img class="debris8" src="imgs/debris8.png" alt="">
+                <img class="debris9_no" src="imgs/debris9_no.png" alt="">
+            </div>
+            <p class="debris_info">
+                <span>碎片库</span>
+                <div class="debrisBubble hidden" id="debrisBubble">碎片库碎片库碎片库碎片库碎片库碎片库碎片库</div>
+                <a href="#" class="info">
+                    <img src="imgs/info.png" alt="" id="debrisInfoBtn">
+                </a>
+            </p>
+            <div class="debris_swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <ul>
+                                <li>
+                                    <div class="debris">
+                                        <img src="imgs/debris1.png" alt="">
+                                        <span class="text">20</span>
+                                    </div>
+                                    <div class="use">使用</div>
+                                    <div class="gift">赠送</div>
+                                </li>
+                                <li>
+                                    <div class="debris">
+                                        <img src="imgs/debris3_no.png" alt="">
+                                    </div>
+                                    <div class="use">使用</div>
+                                    <div class="gift">赠送</div>
+                                </li>
+                                <li>
+                                    <div class="debris">
+                                        <img src="imgs/debris2.png" alt="">
+                                    </div>
+                                    <div class="use">使用</div>
+                                    <div class="gift">赠送</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide">
+                            <ul>
+                                <li>
+                                    <div class="debris">
+                                        <img src="imgs/debris1.png" alt="">
+                                        <span class="text">20</span>
+                                    </div>
+                                    <div class="use">使用</div>
+                                    <div class="gift">赠送</div>
+                                </li>
+                                <li>
+                                    <div class="debris">
+                                        <img src="imgs/debris3_no.png" alt="">
+                                    </div>
+                                    <div class="use">使用</div>
+                                    <div class="gift">赠送</div>
+                                </li>
+                                <li>
+                                    <div class="debris">
+                                        <img src="imgs/debris2.png" alt="">
+                                    </div>
+                                    <div class="use">使用</div>
+                                    <div class="gift">赠送</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bagDialog2 hidden" id="bagDialog2">
+        <div class="close" id="closeBuyBtn"></div>
+        <div class="title">
+            <div class="article">
+                <img src="imgs/icon_64.png" alt="">
+            </div>
+            <span>兽丹&nbsp;&nbsp;X10</span>
+        </div>
+        <p class="desc">
+            用于升级宠物资质
+        </p>
+        <div class="content">
+            <p>请选择数量</p>
+            <div class="btn_list">
+                <button>-10</button>
+                <button>-</button>
+                <span>10</span>
+                <button>+10</button>
+                <button>+</button>
+            </div>
+            <p class="all_money">
+                <span>出售总价&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+                <span>200</span>
+                <img src="imgs/baoshi1.png" alt="">
+            </p>
+            <div class="sell">
+                立即出售
+            </div>
+        </div>
+    </div>
+    <!-- friendDialog-->
+    <div class="commonDialog friendDialog hidden" id="friendDialog">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>好友</span>
+            </div>
+            <div class="item">
+                <span>恶人</span>
+            </div>
+            <div class="item">
+                <span>排行榜</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <div class="search">
+                <input type="text" placeholder="请输入好友ID">
+                <span class="search_icon"></span>
+                <button>添加好友</button>
+            </div>
+            <ul class="list">
+                <li class="list_item">
+                    <img class="close" src="imgs/clsoe3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="biography">传书</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="close" src="imgs/clsoe3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="biography">传书</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="close" src="imgs/clsoe3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="biography">传书</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="close" src="imgs/clsoe3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="biography">传书</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="close" src="imgs/clsoe3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="biography">传书</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="close" src="imgs/clsoe3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="biography">传书</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="close" src="imgs/clsoe3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="biography">传书</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="commonDialog friendDialog1 hidden" id="friendDialog1">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>好友</span>
+            </div>
+            <div class="item">
+                <span>恶人</span>
+            </div>
+            <div class="item">
+                <span>排行榜</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <div class="title">
+                <span>默认</span>
+                <span>在线</span>
+            </div>
+            <ul class="list">
+                <li class="list_item">
+                    <img class="headdress" src="imgs/level1.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/level1.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/headdress.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/headdress1.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/headdress1.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/headdress1.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="commonDialog friendDialog2 hidden" id="friendDialog2">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>好友</span>
+            </div>
+            <div class="item">
+                <span>恶人</span>
+            </div>
+            <div class="item">
+                <span>排行榜</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <div class="title">
+                <p>
+                    您的当前排名&nbsp;&nbsp;:&nbsp;&nbsp;<span>134</span>
+                </p>
+            </div>
+            <ul class="list">
+                <li class="list_item">
+                    <img class="headdress" src="imgs/level1.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/level2.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/level3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/level1.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/level2.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="headdress" src="imgs/level3.png" alt="">
+                    <img class="avatar" src="imgs/touxiang.png" alt="">
+                    <div class="desc">
+                        <span>一二三四五六七八九</span>
+                        <p class="level">练气五层</p>
+                    </div>
+                    <div class="btn">
+                        <button class="add_frinend">加好友</button>
+                        <button>追踪</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- shopDialog -->
+    <div class="commonDialog shopDialog hidden" id="shopDialog">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>充值</span>
+            </div>
+            <div class="item">
+                <span>道具</span>
+            </div>
+            <div class="item">
+                <span>兑换</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <ul class="list">
+                <li class="list_item">
+                    <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    <div class="desc">
+                        <span>60</span>
+                        <img class="commodity1" src="imgs/baoshi1.png" alt="">
+                    </div>
+                    <div class="btn">
+                        <button>&yen;6.00</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    <div class="desc">
+                        <span>60</span>
+                        <img class="commodity1" src="imgs/baoshi2.png" alt="">
+                    </div>
+                    <div class="btn">
+                        <button>&yen;6.00</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    <div class="desc">
+                        <span>60</span>
+                        <img class="commodity1" src="imgs/baoshi3.png" alt="">
+                    </div>
+                    <div class="btn">
+                        <button>&yen;6.00</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="commodity" src="imgs/baoshi4.png" alt="">
+                    <div class="desc">
+                        <span>60</span>
+                        <img class="commodity1" src="imgs/baoshi1.png" alt="">
+                    </div>
+                    <div class="btn">
+                        <button>&yen;6.00</button>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    <div class="desc">
+                        <span>60</span>
+                        <img class="commodity1" src="imgs/baoshi1.png" alt="">
+                    </div>
+                    <div class="btn">
+                        <button>&yen;6.00</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="footer">
+                <img class="baoshi_count" src="imgs/baoshi.png" alt="">
+                <span>0</span>
+            </div>
+        </div>
+    </div>
+    <div class="commonDialog shopDialog1 hidden" id="shopDialog1">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>充值</span>
+            </div>
+            <div class="item">
+                <span>道具</span>
+            </div>
+            <div class="item">
+                <span>兑换</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <ul class="list">
+                <li class="list_item">
+                    <div class="box">
+                        <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    </div>
+                    <span>兽丹</span>
+                    <button>
+                        <span>60</span>
+                        <img class="" src="imgs/baoshi1.png" alt="">
+                    </button>
+                </li>
+                <li class="list_item">
+                    <div class="box">
+                        <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    </div>
+                    <span>兽丹</span>
+                    <button>
+                        <span>60</span>
+                        <img class="" src="imgs/baoshi1.png" alt="">
+                    </button>
+                </li>
+                <li class="list_item">
+                    <div class="box">
+                        <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    </div>
+                    <span>兽丹</span>
+                    <button>
+                        <span>60</span>
+                        <img class="" src="imgs/baoshi1.png" alt="">
+                    </button>
+                </li>
+                <li class="list_item">
+                    <div class="box">
+                        <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    </div>
+                    <span>兽丹</span>
+                    <button>
+                        <span>60</span>
+                        <img class="" src="imgs/baoshi1.png" alt="">
+                    </button>
+                </li>
+                <li class="list_item">
+                    <div class="box">
+                        <img class="commodity" src="imgs/baoshi1.png" alt="">
+                    </div>
+                    <span>兽丹</span>
+                    <button>
+                        <span>60</span>
+                        <img class="" src="imgs/baoshi1.png" alt="">
+                    </button>
+                </li>
+            </ul>
+            <div class="footer">
+                <img class="baoshi_count" src="imgs/baoshi.png" alt="">
+                <span>0</span>
+            </div>
+        </div>
+    </div>
+    <div class="commonDialog shopDialog2 hidden" id="shopDialog2">
+        <div class="commonDialog_title">
+            <div class="item active">
+                <span>充值</span>
+            </div>
+            <div class="item">
+                <span>道具</span>
+            </div>
+            <div class="item">
+                <span>兑换</span>
+            </div>
+        </div>
+        <div class="commonDialog_content">
+            <ul class="list">
+                <li class="list_item">
+                    <div class="sub_item">
+                        <div class="box">
+                            <img class="" src="imgs/baoshi1.png" alt="">
+                        </div>
+                        <span>兽丹</span>
+                    </div>
+                    <img class="duihuan" src="imgs/duihuan.png" alt="">
+                    <div class="sub_item1">
+                        <img class="" src="imgs/daijinquan.png" alt="">
+                        <span>微信红包</span>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <div class="sub_item">
+                        <div class="box">
+                            <img class="" src="imgs/baoshi1.png" alt="">
+                        </div>
+                        <span>兽丹</span>
+                    </div>
+                    <img class="duihuan" src="imgs/duihuan.png" alt="">
+                    <div class="sub_item1">
+                        <img class="" src="imgs/daijinquan.png" alt="">
+                        <span>微信红包</span>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <div class="sub_item">
+                        <div class="box">
+                            <img class="" src="imgs/baoshi1.png" alt="">
+                        </div>
+                        <span>兽丹</span>
+                    </div>
+                    <img class="duihuan" src="imgs/duihuan.png" alt="">
+                    <div class="sub_item1">
+                        <img class="" src="imgs/daijinquan.png" alt="">
+                        <span>微信红包</span>
+                    </div>
+                </li>
+                <li class="list_item">
+                    <div class="sub_item">
+                        <div class="box">
+                            <img class="" src="imgs/baoshi1.png" alt="">
+                        </div>
+                        <span>兽丹</span>
+                    </div>
+                    <img class="duihuan" src="imgs/duihuan.png" alt="">
+                    <div class="sub_item1">
+                        <img class="" src="imgs/daijinquan.png" alt="">
+                        <span>微信红包</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="footer">
+                <img class="baoshi_count" src="imgs/baoshi.png" alt="">
+                <span>0</span>
+            </div>
+        </div>
+    </div>
+    <div class="elixirDialog hidden" id="elixirDialog">
+        <img src="imgs/info1.png" class="info" alt="">
+        <div class="elixir_title">
+            <div class="item">
+                <img src="imgs/baoshi.png" alt="">
+                <span>30</span>
+            </div>
+            <div class="item">
+                <img src="imgs/fanqie.png" alt="">
+                <span>20</span>
+            </div>
+            <div class="item">
+                <img src="imgs/guanzi.png" alt="">
+                <span>40</span>
+            </div>
+        </div>
+        <div class="elixir_content">
+            <p>
+                <img src="imgs/huaping.png" alt="">
+                <img src="imgs/huaping.png" alt="">
+                <img src="imgs/huaping.png" alt="">
+            </p>
+            <p>
+                <img src="imgs/huaping.png" alt="">
+                <img src="imgs/huaping.png" alt="">
+                <img src="imgs/huaping.png" alt="">
+            </p>
+            <p>
+                <img src="imgs/huaping.png" alt="">
+                <img src="imgs/huaping.png" alt="">
+                <img src="imgs/huaping.png" alt="">
+            </p>
+            <p>
+                <img src="imgs/huaping.png" alt="">
+                <img src="imgs/huaping.png" alt="">
+                <img src="imgs/huaping.png" alt="">
+            </p>
+        </div>
+        <div class="elixir_footer">
+            <img class="small kuozhan" src="imgs/kuozhan.png" alt="">
+            <img class="big lianyao" src="imgs/lianyao.png" alt="">
+            <img class="big zengsong" src="imgs/zengsong.png" alt="">
+            <img class="small suojian" src="imgs/suojian.png" alt="">
+        </div>
+    </div>
+    <div class="elixirDialog1 hidden" id="elixirDialog1">
+        <div class="close" id="elixirCloseMsgBtn1"></div>
+        <div class="title">
+            <span>扩展</span>
+        </div>
+        <div class="desc">
+            <span>新增一个花盆</span>
+        </div>
+        <div class="content">
+            <span>支付方式&nbsp;&nbsp;:</span>
+            <p>
+                <a>
+                    <img class="off" src="imgs/sound_off.png" alt="">
+                    <img class="on" src="imgs/sound_on.png" alt="">
+                </a>
+                <span class="text">微信支付</span>
+                <span>（10元）</span>
+            </p>
+            <p>
+                <a class="bottom">
+                    <img class="off" src="imgs/sound_off.png" alt="">
+                    <img class="on hidden" src="imgs/sound_on.png" alt="">
+                </a>
+                <span class="text">蓝晶钻支付</span>
+                <span>（10</span>
+                <img src="imgs/baoshi1.png" alt="">
+                <span>）</span>
+            </p>
+        </div>
+        <div class="goumai">
+            <button>购买</button>
+        </div>
+    </div>
+    <div class="elixirDialog2 hidden" id="elixirDialog2">
+        <div class="close" id="elixirCloseMsgBtn2"></div>
+        <div class="title">
+            <span>缩减</span>
+        </div>
+        <div class="desc">
+            <span>回收一个花盆</span>
+        </div>
+        <div class="content">
+            <span>回收方式&nbsp;&nbsp;:</span>
+            <p>
+                <a>
+                    <img class="off" src="imgs/sound_off.png" alt="">
+                    <img class="on" src="imgs/sound_on.png" alt="">
+                </a>
+                <span class="text">微信支付</span>
+                <span>（10元）</span>
+            </p>
+            <p>
+                <a class="bottom">
+                    <img class="off" src="imgs/sound_off.png" alt="">
+                    <img class="on hidden" src="imgs/sound_on.png" alt="">
+                </a>
+                <span class="text">蓝晶钻支付</span>
+                <span>（10）</span>
+            </p>
+        </div>
+        <div class="huishou">
+            <button>回收</button>
+        </div>
+    </div>
+    <div class="elixirDialog3 hidden" id="elixirDialog3">
+        <div class="close" id="elixirCloseMsgBtn3"></div>
+        <div class="title">
+            <span>赠送</span>
+        </div>
+        <div class="content">
+            <ul>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="characterDialog hidden" id="characterDialog">
+        <div class="lingyao" id="openLingYaoBtn">
+        </div>
+        <div class="progress">
+            <div class="progress_active"></div>
+        </div>
+        <div class="character">
+            <ul class="base_msg">
+                <li>
+                    <span class="name">等级&nbsp;:</span>
+                    <span class="value">练气五层</span>
+                </li>
+                <li>
+                    <span class="name">血量&nbsp;:</span>
+                    <span class="value">2500/3000</span>
+                </li>
+                <li>
+                    <span class="name">攻击&nbsp;:</span>
+                    <span class="value">300</span>
+                </li>
+                <li>
+                    <span class="name">命中&nbsp;:</span>
+                    <span class="value">20</span>
+                </li>
+            </ul>
+            <div class="jineng_list">
+                <button class="liaoshang">疗伤</button>
+                <button class="tupo">突破</button>
+            </div>
+            <img src="imgs/character.png" alt="">
+        </div>
+        <div class="message">
+            <ul>
+                <li>
+                    <img src="imgs/icon_27.png" alt="">
+                    <span>宝石&nbsp;:&nbsp;20</span>
+                </li>
+                <li>
+                    <img class="shoudan" src="imgs/icon_34.png" alt="">
+                    <span>兽丹&nbsp;:&nbsp;20</span>
+                </li>
+                <li>
+                    <img class="peiyuandan" src="imgs/icon_35.png" alt="">
+                    <span>培元丹&nbsp;:&nbsp;20</span>
+                </li>
+            </ul>
+            <div class="card">
+                <div class="card_item">
+                    <div class="title">
+                        <span>等级&nbsp;:&nbsp;练气五级</span>
+                    </div>
+                    <p class="desc">
+                        下一级&nbsp;:&nbsp;练气六层
+                    </p>
+                    <button>
+                        <p class="shengji">升级</p>
+                        <p>灵石&nbsp;:&nbsp;20</p>
+                    </button>
+                </div>
+                <div class="card_item">
+                    <div class="title">
+                        <span>命中&nbsp;:&nbsp;20</span>
+                    </div>
+                    <p class="desc">
+                        下一级&nbsp;:&nbsp;练气六层
+                    </p>
+                    <button>
+                        <p class="shengji">升级</p>
+                        <p>灵石&nbsp;:&nbsp;20</p>
+                    </button>
+                </div>
+            </div>
+            <div class="text">
+                温馨提示:优先使用培元丹
+            </div>
+        </div>
+    </div>
+    <div class="friendDialog4 hidden" id="friendDialog4">
+        <div class="close" id="closeMsgBtn"></div>
+        <div class="title">
+            <span>薇草</span>
+        </div>
+        <div class="content">
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+        </div>
+        <div class="send">
+            <input type="text">
+            <button>发送</button>
+        </div>
+    </div>
+    <div class="zengsongDialog hidden" id="zengsongDialog">
+        <div class="close"></div>
+        <div class="title">
+            <div class="article">
+                <img src="imgs/icon_64.png" alt="">
+            </div>
+            <span>灵果&nbsp;&nbsp;X10</span>
+        </div>
+        <p class="desc">
+            用于炼药
+        </p>
+        <div class="content">
+            <p>请选择数量</p>
+            <div class="btn_list">
+                <button>-10</button>
+                <button>-</button>
+                <span>10</span>
+                <button>+10</button>
+                <button>+</button>
+            </div>
+            <p class="all_money">
+                <span>出售总价&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+                <span>200</span>
+                <img src="imgs/baoshi1.png" alt="">
+            </p>
+            <div class="sell">
+                赠送
+            </div>
+        </div>
+    </div>
+    <!-- /系统设置弹窗 -->
+    <!-- 通用遮罩层 -->
+    <button class="mask__btn" id="backBtn"></button>
+    <div class="mask hidden" id="mask">
+        <span class="mask__text"></span>
+    </div>
+    <!-- 通用遮罩层 -->
+    <div class="mask1 hidden" id="mask1">
+    </div>
+    <!-- 通用遮罩层 -->
+    <div class="mask2 hidden" id="mask2">
+    </div>
+    <!-- 通用遮罩层 -->
+    <div class="mask3 hidden" id="mask3">
+        <span class="mask__text"></span>
+    </div>
+    <!-- /通用遮罩层 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
     <!-- 开发环境插入合并打包的js,以下两个注释需要保留 -->
     <!-- inject:js -->

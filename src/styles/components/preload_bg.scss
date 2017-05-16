@@ -1,0 +1,38 @@
+.preloadImg{
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../imgs/preload_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  .preloadImg__progress{
+    position: absolute;
+    left: 50%;
+    bottom: 30%;
+    transform: translate(-50%);
+    width: 60vw;
+    height: 25px;
+    background-color: #4e566b;
+    border-radius: 25px;
+    border: 3px solid #1c97d0;
+    padding: 0 5px;
+    &--full{
+      margin: auto;
+      background-color: #3372a8;
+      height: 13px;
+      margin-top:3px; 
+      border-radius: 25px;
+    }
+    &--active{
+      position: absolute;
+      z-index: 101;
+      bottom: 20%;
+      width: 0%;
+      background-color: #01ef1f;
+      height: 13px;
+      border-radius: 25px;
+      padding: 0 5px;
+    }
+  }
+}

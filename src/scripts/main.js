@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
     var $ = require('jquery');
     var music = require('./music_control');
@@ -7,23 +7,30 @@
     if (location.href.indexOf('fight') > 0) {
         var fightPage = require('./fight_page');
 
-        document.addEventListener('touchstart', function (e) {
+        document.addEventListener('touchstart', function(e) {
             e.preventDefault();
         }, false);
 
         fightPage.init();
-    }
-    else {
+    } else {
         var ISroll = require('iscroll');
+        var Swiper = require('swiper');
 
 
         var PageScroll = require('./page_scroll');
         var pageLoad = require('./load_background');
+        var setLoading = require('./loading');
 
         var chestDialog = require('./chest_dialog');
+        var homeBtnEvent = require('./home_btn_event');
+        global.mask = require('./back_mask');
 
-        $(function () {
+        window.onload = function() {
+            setLoading.init();
+        }
 
+
+        $(function() {
             var totalCount = 99;
             var outputStr = '';
             for (i = 1; i <= 17; i++) {
@@ -48,12 +55,16 @@
             // 加载页面资源
             pageLoad.init();
             PageScroll.init();
+            homeBtnEvent();
+
+            // 初始化事件
+            // character.init();
 
             $('.chestDialog').css({
                 height: Math.floor($(window).height() * 600 / 1008)
             });
 
-            $('.chest').click(function (e) {
+            $('.chest').click(function(e) {
                 chestDialog.init($(this).attr('data'));
 
                 sounds.wait.play();
@@ -62,9 +73,14 @@
 
             });
 
-            $('.navShop').click(function () {
+            $('.navShop').click(function() {
                 location.href = 'fight.html';
             });
+
+            new Swiper('.swiper-container', {
+                prevButton: '.swiper-button-prev',
+                nextButton: '.swiper-button-next',
+            })
         });
     }
 })();

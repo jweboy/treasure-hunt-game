@@ -1,0 +1,110 @@
+    @import '../mixin.scss';
+    .settingDialog {
+        position: fixed;
+        top: 50%;
+        left: 5%;
+        z-index: 110;
+        transform: translateY(-50%);
+        margin: auto;
+        width: 90%;
+        @include background("../imgs/character_introbg.png");
+        .settingDialog__box {
+            width: 90%;
+            margin: auto;
+            margin-top: 10%;
+            margin-bottom: 10px;
+            @include background("../imgs/character_introbg1.png");
+            padding: 20px 30px;
+            position: relative;
+            font-size: 24px;
+            .settingDialog__logo {
+                img {
+                    width: 22%;
+                }
+                .settingDialog__user {
+                    width: 70%;
+                    float: right;
+                    margin-top: 2%;
+                    p:first-child {
+                        margin-bottom: 10px;
+                    }
+                    .settingDialog__username {
+                        height: 45px;
+                        line-height: 45px;
+                        border-radius: 5px;
+                        padding: 5px;
+                        width: 78%;
+                        background: #a99977;
+                        border: none;
+                        outline: none;
+                        font-size: 24px;
+                        &::-webkit-input-placeholder {
+                            color: #291800
+                        }
+                    }
+                    span.level,
+                    span.username {
+                        color: #dac461;
+                        margin-right: 10px;
+                    }
+                    span.levelDesc {
+                        color: #291800;
+                    }
+                }
+            }
+            .settingDialog__desc {
+                margin-top: 5%;
+                font-size: 24px;
+                p {
+                    margin-bottom: 10px;
+                }
+                span.number,
+                span.mobile,
+                span.sound {
+                    color: #dac461;
+                    margin-right: 10px;
+                    display: block;
+                    width: 30%;
+                    float: left;
+                }
+                span.levelDesc {
+                    color: #291800;
+                }
+                .settingDialog__mobile {
+                    height: 45px;
+                    line-height: 45px;
+                    border-radius: 5px;
+                    padding: 5px;
+                    width: 55%;
+                    background: #a99977;
+                    border: none;
+                    outline: none;
+                    font-size: 24px;
+                    &::-webkit-input-placeholder {
+                        color: #291800
+                    }
+                }
+                .soudnDesc {
+                    position: relative;
+                    margin-left: 32.5%;
+                    .on {
+                        position: absolute;
+                        left: 0
+                    }
+                }
+            }
+        }
+        .settingDialog__btn {
+            text-align: center;
+            button {
+                outline: none;
+                border: none;
+                @include background("../imgs/character_introbtn.png");
+                padding: 30px 60px;
+                color: #fff;
+                font-size: 24px;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+        }
+    }

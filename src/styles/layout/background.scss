@@ -10,9 +10,6 @@
     background-repeat:no-repeat;
     background-size: 100% 100%;
 }
-.user{
-
-}
 .userlogo{
     position: absolute;
     left: 3.125%;
@@ -46,7 +43,7 @@
 }
 .rightNav div{
     z-index: 20;
-    position:absolute;
+    position:fixed;
     right: 6.25%;
     width: 15%;
     background-repeat:no-repeat;
@@ -68,7 +65,7 @@
 
 .bottomNav div{
     z-index: 20;
-    position:absolute;
+    position:fixed;
     bottom: 5%;
     width: 15%;
     background-repeat:no-repeat;

@@ -1,10 +1,12 @@
-node_modules/
+/node_modules/
 
 release/
 vendors/
 trash/
 static/**/*.*
 resource/
+
+src/imgs/*
 
 npm-debug.log
 yarn.lock
