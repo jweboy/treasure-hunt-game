@@ -197,6 +197,7 @@ gulp.task('watch-dev', () => {
 
     gulp.watch('release/*.html').on('change', browserSync.reload);
     gulp.watch('release/scripts/*').on('change', browserSync.reload);
+    gulp.watch('release/imgs/*').on('change', browserSync.reload);
     gulp.watch('release/styles/*').on('change', browserSync.reload);
     gulp.watch('release/resource/*').on('change', browserSync.reload);
     gulp.watch('release/fonts/*').on('change', browserSync.reload);

@@ -55,15 +55,15 @@
             });
 
             $('.l-bg div').css({
-                height: Math.floor($('.l-bg div').width() * 121 /129),
+                height: Math.floor($('.l-bg div').width() * 121 / 129),
                 display: 'block'
             });
 
             $('.chest1').css({
-                top: - Math.floor($('.l-bg').height() * 85 / 662),
+                top: -Math.floor($('.l-bg').height() * 85 / 662),
             });
             $('.chest2').css({
-                top: - Math.floor($('.l-bg').height() * 15 / 662),
+                top: -Math.floor($('.l-bg').height() * 15 / 662),
             });
             $('.chest3').css({
                 top: Math.floor($('.l-bg').height() * 65 / 662),

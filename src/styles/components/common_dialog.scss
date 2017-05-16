@@ -1,0 +1,1919 @@
+@import '../mixin.scss';
+.commonDialog {
+    @include background('../imgs/common_box.png');
+    width: 90%;
+    height: 82%;
+    @include verHorCenter();
+    position: fixed;
+    z-index: 150;
+    .commonDialog_title {
+        height: 10%;
+        line-height: 10%;
+        color: #fff;
+        text-align: center;
+        font-size: 30px;
+        .item {
+            display: inline-block;
+            float: left;
+            width: 50%;
+            height: 100%;
+            position: relative;
+            color: #dac461;
+        }
+        .item.active {
+            color: #291800;
+        }
+        span:first-child {
+            @include verHorCenter();
+        }
+    }
+    .commonDialog_footer {
+        position: absolute;
+        bottom: 3%;
+        width: 100%;
+        padding: 0 35px;
+        .speaker {
+            width: 59px;
+            height: 100%;
+            float: left;
+            position: relative;
+            span {
+                position: absolute;
+                right: 5px;
+                bottom: 5px;
+                color: #fff;
+                z-index: 10;
+                font-size: 24px;
+            }
+        }
+        .text {
+            width: 48%;
+            height: 59px;
+            position: absolute;
+            font-size: 26px;
+            margin-left: 10px;
+            padding: 0 10px;
+            @include background('../imgs/common_text.png');
+        }
+        .send {
+            width: 30%;
+            height: 59px;
+            float: right;
+            @include background('../imgs/common_send.png');
+            color: #fff;
+            text-align: center;
+            line-height: 59px;
+            font-size: 24px;
+        }
+    }
+}
+
+.commonDialog_content {
+    width: 87%;
+    margin: auto;
+    padding-top: 30px;
+    .chat {
+        position: relative;
+        .chat_item_user1 {
+            overflow: hidden;
+            width: 95%;
+            margin: auto;
+            margin-bottom: 30px;
+            .left {
+                float: left;
+                width: 25%;
+                img {
+                    width: 100%;
+                    border: 3px solid #2eae35;
+                    border-radius: 50%;
+                }
+                .join {
+                    width: 100%;
+                    line-height: 40px;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 24px;
+                    padding: 5px 10px;
+                    @include background('../imgs/common_send.png');
+                }
+            }
+            .right {
+                float: left;
+                width: 75%;
+                padding-left: 20px;
+                .username {
+                    font-size: 26px;
+                    color: #291800;
+                }
+                .chat_bubble {
+                    height: 20px;
+                    margin-top: 5px;
+                    @include background('../imgs/common_bubble.png');
+                }
+            }
+        }
+        .chat_item_user2 {
+            padding: 0 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            .right {
+                float: right;
+                width: 25%;
+                img {
+                    width: 100%;
+                    border: 3px solid #2eae35;
+                    border-radius: 50%;
+                }
+                .join {
+                    width: 100%;
+                    line-height: 40px;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 24px;
+                    padding: 5px 10px;
+                    @include background('../imgs/common_send.png');
+                }
+            }
+            .left {
+                float: left;
+                width: 75%;
+                position: relative;
+                .username {
+                    font-size: 26px;
+                    color: #291800;
+                }
+                .chat_bubble {
+                    height: 20px;
+                    margin-top: 5px;
+                    @include background('../imgs/common_bubble.png');
+                }
+            }
+        }
+    }
+}
+
+.commonDialog1 {
+    @include background('../imgs/common_box1.png');
+    width: 90%;
+    height: 90%;
+    @include verHorCenter();
+    z-index: 150;
+    position: fixed;
+    .commonDialog_content {
+        width: 87%;
+        margin: auto;
+        padding: 30px 5px;
+    }
+    .commonDialog_title {
+        height: 10%;
+        line-height: 10%;
+        color: #fff;
+        text-align: center;
+        font-size: 30px;
+        .item {
+            display: inline-block;
+            float: left;
+            width: 50%;
+            height: 100%;
+            position: relative;
+            color: #dac461;
+        }
+        .item.active {
+            color: #291800;
+        }
+        span:first-child {
+            @include verHorCenter();
+        }
+    }
+}
+
+.news-list {
+    p {
+        font-size: 26px;
+        color: #dac461;
+        margin: 20px 0;
+    }
+    span {
+        color: #70c3d3;
+    }
+}
+
+.msgDialog {
+    @include background('../imgs/common_box3.png');
+    .commonDialog_content .chat .chat_item_user1 {
+        @include background('../imgs/box_bg.png');
+        padding: 20px;
+        border-radius: 20px;
+        .left {
+            img {
+                border: none
+            }
+        }
+        .right {
+            .username {
+                color: #dac461;
+                margin-bottom: 20px;
+                font-size: 28px;
+                span {
+                    color: #70c3d3;
+                }
+            }
+            .agree {
+                font-size: 24px;
+                padding: 15px 50px;
+                color: #fff;
+                @include background('../imgs/common_send.png');
+                margin-bottom: 20px;
+            }
+            .refuse {
+                font-size: 24px;
+                padding: 15px 50px;
+                color: #fff;
+                @include background('../imgs/character_introbtn.png');
+                margin-bottom: 20px;
+            }
+            .time {
+                border-top: 1px solid #fff;
+                font-size: 28px;
+                text-align: right;
+                padding-top: 10px;
+                padding-right: 20px;
+                color: #291800;
+            }
+        }
+    }
+}
+
+.msgDialog1 {
+    @include background('../imgs/common_box4.png');
+    .commonDialog_content .chat .chat_item_user1 {
+        @include background('../imgs/box_bg.png');
+        padding: 30px;
+        border-radius: 20px;
+        .left {
+            width: 20%;
+            img {
+                border: none;
+                width: 80%;
+                border-radius: initial;
+            }
+        }
+        .right {
+            width: 80%;
+            .username {
+                color: #dac461;
+                letter-spacing: 1px;
+                font-size: 28px;
+                span {
+                    color: #70c3d3;
+                }
+            }
+            .time {
+                border-top: 1px solid #fff;
+                font-size: 28px;
+                text-align: right;
+                padding-top: 10px;
+                padding-right: 20px;
+                margin-top: 10px;
+                color: #291800;
+            }
+        }
+    }
+}
+
+.bagDialog {
+    @include background('../imgs/common_box3.png');
+    .commonDialog_content {
+        width: 90%;
+        height: 79%;
+        .chat {
+            overflow: scroll;
+            .chat_item_user1 {
+                width: 31%;
+                float: left;
+                height: initial;
+                padding: 5% 0;
+                @include background('../imgs/character_introbg1.png');
+                text-align: center;
+                border-radius: 20px;
+                &:nth-child(3n+2) {
+                    margin: 0 3.5%;
+                }
+                .article {
+                    width: 90px;
+                    height: 90px;
+                    position: relative;
+                    margin: auto;
+                    @include background('../imgs/beijing.jpg');
+                    img {
+                        @include verHorCenter();
+                    }
+                }
+                .article_name {
+                    font-size: 26px;
+                    color: #291800;
+                    font-weight: 500;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+                .article_number {
+                    width: 80%;
+                    margin: auto;
+                    font-size: 20px;
+                    color: #fff;
+                    @include background('../imgs/text_bg.png');
+                    margin-bottom: 30px;
+                }
+                .buy {
+                    width: 80%;
+                    margin: auto;
+                    padding: 15px 20px;
+                    font-size: 20px;
+                    color: #fff;
+                    @include background('../imgs/common_send.png');
+                    img {
+                        width: 30%;
+                    }
+                    span {
+                        vertical-align: super;
+                    }
+                }
+            }
+        }
+    }
+    .commonDialog_footer {
+        width: 40%;
+        height: 9%;
+        margin-left: 60%;
+        position: relative;
+        margin-top: 45px;
+        img {
+            width: 100%;
+            float: right;
+            margin-right: 20px;
+        }
+        span {
+            font-size: 20px;
+            color: #fff;
+            position: absolute;
+            left: 35%;
+            top: 15%;
+        }
+    }
+}
+
+.bagDialog1 {
+    @include background('../imgs/common_box4.png');
+    .commonDialog_content {
+        width: 80%;
+        height: 78%;
+        padding: 0;
+        .treasure_map {
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            margin-left: 5%;
+            margin-top: 20px;
+            height: 55%;
+            img {
+                float: left;
+                position: absolute;
+            }
+            .debris3 {
+                left: 31%;
+                top: 0
+            }
+            .debris4 {
+                left: 0;
+                top: 0;
+            }
+            .debris2_no {
+                right: 7%;
+                top: 0;
+            }
+            .debris1_no {
+                left: 0;
+                top: 22%
+            }
+            .debris5 {
+                left: 21%;
+                top: 32%;
+            }
+            .debris6 {
+                right: 7%;
+                top: 22%;
+            }
+            .debris7 {
+                left: 0;
+                top: 54%;
+            }
+            .debris8 {
+                left: 31%;
+                top: 64%;
+            }
+            .debris9_no {
+                right: 7%;
+                top: 54%;
+            }
+        }
+        margin: auto;
+        .debris_info {
+            margin: 15px 0;
+            font-size: 22px;
+            color: #fff;
+            span {
+                @include background('../imgs/text_bg.png');
+                padding: 5px 15px;
+                width: 30%;
+                display: block;
+                float: left;
+                margin-top: 5px
+            }
+        }
+        .debris_swiper {
+            @include background('../imgs/box_bg.png');
+            .swiper-container {
+                height: 100%;
+                width: 91%;
+                padding: 20px 0;
+                margin: auto;
+                ul {
+                    overflow: hidden;
+                    li {
+                        color: #fff;
+                        text-align: center;
+                        font-size: 22px;
+                        width: 30%;
+                        float: left;
+                        &:nth-child(2) {
+                            margin: 0 5%;
+                        }
+                        .debris {
+                            border-radius: 25px;
+                            width: 125px;
+                            height: 125px;
+                            position: relative;
+                            margin-bottom: 10px;
+                            @include background('../imgs/debris_bg.png');
+                            img {
+                                width: 90px;
+                                height: 90px;
+                                @include verHorCenter();
+                            }
+                            .text {
+                                position: absolute;
+                                right: 5px;
+                                bottom: 5px;
+                            }
+                        }
+                        .use {
+                            padding: 10px 20px;
+                            margin-bottom: 10px;
+                            @include background('../imgs/character_introbtn.png');
+                        }
+                        .gift {
+                            padding: 10px 20px;
+                            @include background('../imgs/common_send.png');
+                        }
+                    }
+                }
+            }
+            .swiper-button-prev {
+                width: 45px;
+                height: 53px;
+                margin-left: 5px;
+                top: 80%;
+                @include background('../imgs/btn_prev.png');
+            }
+            .swiper-button-next {
+                width: 45px;
+                height: 53px;
+                margin-right: 5px;
+                top: 80%;
+                @include background('../imgs/btn_next.png');
+            }
+        }
+    }
+    .commonDialog_footer {
+        width: 40%;
+        height: 9%;
+        margin-left: 60%;
+        position: relative;
+        margin-top: 45px;
+        img {
+            width: 100%;
+            float: right;
+            margin-right: 20px;
+        }
+        span {
+            font-size: 20px;
+            color: #fff;
+            position: absolute;
+            left: 35%;
+            top: 15%;
+        }
+    }
+}
+
+.bagDialog2 {
+    width: 80%;
+    z-index: 160;
+    position: absolute;
+    @include verHorCenter();
+    @include background('../imgs/box_bg2.png');
+    .title {
+        padding: 5%;
+        height: 140px;
+        line-height: 90px;
+        .article {
+            width: 90px;
+            height: 90px;
+            position: relative;
+            margin: auto;
+            display: inline-block;
+            float: left;
+            @include background('../imgs/beijing.jpg');
+            img {
+                @include verHorCenter();
+            }
+        }
+        span {
+            color: #291800;
+            font-size: 26px;
+            margin-left: 20px;
+        }
+    }
+    .desc {
+        text-indent: 2rem;
+        font-size: 24px;
+        color: #fff;
+        height: 200px;
+        overflow: scroll;
+        background-color: #7f7359;
+        width: 97.5%;
+        margin: auto;
+        padding: 20px 0;
+    }
+    .content {
+        padding: 5%;
+        p {
+            font-size: 24px;
+            color: #fff;
+        }
+    }
+    .sell {
+        width: 40%;
+        padding: 25px 20px;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        margin: auto;
+        @include background('../imgs/common_btn.png');
+    }
+    .all_money {
+        text-align: center;
+        font-size: 24px;
+        margin: 20px 0;
+        span {
+            vertical-align: super;
+            &:first-child {
+                color: #291800;
+            }
+        }
+        img {
+            width: 8%;
+            margin-left: 10px;
+        }
+    }
+    .btn_list {
+        position: relative;
+        button {
+            width: 20%;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            @include background('../imgs/btn_bg.png');
+            &:nth-child(2) {
+                margin-left: 2.5px;
+            }
+            &:nth-child(5) {
+                margin-left: 2.5px;
+            }
+        }
+        span {
+            font-size: 24px;
+            color: #fff;
+            background: #5f3414;
+            padding: 10px 20px;
+            // position: absolute;
+            // @include verHorCenter();
+        }
+    }
+    .close {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        right: -5%;
+        top: -5%;
+        z-index: 160;
+        @include background('../imgs/close1.png');
+    }
+}
+
+.friendDialog {
+    @include background('../imgs/common_box5.png');
+    .commonDialog_title {
+        .item {
+            width: 33.33%
+        }
+    }
+    .commonDialog_content {
+        position: relative;
+        height: 90%;
+        .search {
+            position: fixed;
+            width: 88%;
+            input {
+                width: 60%;
+                height: 70px;
+                line-height: 70px;
+                background: #533710;
+                font-size: 24px;
+                &::-webkit-input-placeholder {
+                    color: #c5b594
+                }
+                border-radius: 10px;
+                padding: 10px 20px;
+            }
+            .search_icon {
+                padding: 40px;
+                position: absolute;
+                z-index: 151;
+                left: 54%;
+                top: -5%;
+                @include background('../imgs/search_icon.png');
+            }
+            button {
+                padding: 20px;
+                color: #fff;
+                font-size: 24px;
+                text-align: center;
+                float: right;
+                @include background('../imgs/btn_bg1.png');
+            }
+        }
+        .list {
+            margin-top: 90px;
+            overflow: scroll;
+            height: 83%;
+            .list_item {
+                height: initial;
+                overflow: hidden;
+                padding: 15px;
+                position: relative;
+                @include background('../imgs/item_bg.png');
+                img.close {
+                    @include vertical();
+                }
+                img.avatar {
+                    @include vertical();
+                    left: 85px;
+                    width: 20%;
+                    border: 3px solid #6ad14e;
+                    border-radius: 50%;
+                }
+                .desc {
+                    @include vertical();
+                    left: 200px;
+                    top: 65px;
+                    font-size: 24px;
+                    color: #291800;
+                    width: 32%;
+                    .level {
+                        color: #fff
+                    }
+                }
+                .btn {
+                    float: right;
+                    width: 25%;
+                    display: inline-block;
+                    button {
+                        width: 100%;
+                        padding: 10px 15px;
+                        font-size: 24px;
+                        color: #fff;
+                        &:first-child {
+                            margin-bottom: 5px;
+                            @include background('../imgs/character_introbtn.png');
+                        }
+                        &:last-child {
+                            @include background('../imgs/common_send.png');
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.friendDialog1 {
+    @include background('../imgs/common_box6.png');
+    .commonDialog_title {
+        .item {
+            width: 33.33%
+        }
+    }
+    .commonDialog_content {
+        position: relative;
+        height: 90%;
+        .title {
+            font-size: 24px;
+            color: #fff;
+            overflow: hidden;
+            span {
+                padding: 10px;
+                display: block;
+                float: left;
+                width: 30%;
+                text-align: center;
+                @include background('../imgs/text_bg.png');
+                &:last-child {
+                    margin-left: 20px;
+                }
+            }
+        }
+        .list {
+            overflow: scroll;
+            height: 83%;
+            margin-top: 30px;
+            .list_item {
+                height: initial;
+                overflow: hidden;
+                padding: 15px;
+                position: relative;
+                @include background('../imgs/item_bg.png');
+                img.headdress {
+                    @include vertical();
+                }
+                img.avatar {
+                    @include vertical();
+                    left: 85px;
+                    width: 20%;
+                    border: 3px solid #6ad14e;
+                    border-radius: 50%;
+                }
+                span.number {
+                    position: absolute;
+                    bottom: 0;
+                    font-size: 20px;
+                    bottom: 5%;
+                    left: 6%;
+                }
+                .desc {
+                    @include vertical();
+                    left: 200px;
+                    top: 65px;
+                    font-size: 24px;
+                    color: #291800;
+                    width: 32%;
+                    .level {
+                        color: #fff
+                    }
+                }
+                .btn {
+                    float: right;
+                    width: 25%;
+                    display: inline-block;
+                    button {
+                        width: 100%;
+                        padding: 10px 15px;
+                        font-size: 24px;
+                        color: #fff;
+                        &:first-child {
+                            margin-bottom: 5px;
+                            @include background('../imgs/character_introbtn.png');
+                        }
+                        &:last-child {
+                            @include background('../imgs/common_send.png');
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.friendDialog2 {
+    @include background('../imgs/common_box7.png');
+    .commonDialog_title {
+        .item {
+            width: 33.33%
+        }
+    }
+    .commonDialog_content {
+        position: relative;
+        height: 90%;
+        .title {
+            font-size: 24px;
+            color: #fff;
+            overflow: hidden;
+            span {
+                font-size: 30px;
+                color: #6ad14e;
+            }
+        }
+        .list {
+            overflow: scroll;
+            height: 83%;
+            margin-top: 30px;
+            .list_item {
+                height: initial;
+                overflow: hidden;
+                padding: 15px;
+                position: relative;
+                @include background('../imgs/item_bg.png');
+                img.headdress {
+                    @include vertical();
+                }
+                img.avatar {
+                    @include vertical();
+                    left: 85px;
+                    width: 20%;
+                    border: 3px solid #6ad14e;
+                    border-radius: 50%;
+                }
+                span.number {
+                    position: absolute;
+                    bottom: 0;
+                    font-size: 20px;
+                    bottom: 5%;
+                    left: 6%;
+                }
+                .desc {
+                    @include vertical();
+                    left: 200px;
+                    top: 65px;
+                    font-size: 24px;
+                    color: #291800;
+                    width: 32%;
+                    .level {
+                        color: #fff
+                    }
+                }
+                .btn {
+                    float: right;
+                    width: 25%;
+                    display: inline-block;
+                    button {
+                        width: 100%;
+                        padding: 10px 15px;
+                        font-size: 24px;
+                        color: #fff;
+                        &:first-child {
+                            margin-bottom: 5px;
+                            @include background('../imgs/character_introbtn.png');
+                        }
+                        &:last-child {
+                            @include background('../imgs/common_send.png');
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.friendDialog4 {
+    width: 80%;
+    height: 50%;
+    z-index: 160;
+    position: absolute;
+    @include verHorCenter();
+    @include background('../imgs/box_bg4.png');
+    .title {
+        text-align: center;
+        span {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #f3d49b;
+            -webkit-text-stroke: 1px #9e7c32;
+        }
+    }
+    .content {
+        width: 90%;
+        margin: auto;
+        height: 69%;
+        overflow: scroll;
+        @include background('../imgs/box_bg5.png');
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 20px;
+        font-size: 24px;
+        color: #fff;
+        .friend {
+            color: #6ad14e;
+        }
+    }
+    .send {
+        width: 90%;
+        margin: auto;
+        input {
+            @include background('../imgs/common_text.png');
+            height: 65px;
+            line-height: 65px;
+            font-size: 24px;
+            padding: 10px 15px;
+            color: #fff;
+        }
+        button {
+            padding: 10px 35px;
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            margin-left: 10px;
+            @include background('../imgs/common_send.png');
+        }
+    }
+    .close {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        right: -5%;
+        top: -5%;
+        z-index: 160;
+        @include background('../imgs/close1.png');
+    }
+}
+
+.shopDialog {
+    @include background('../imgs/box_bg8.png');
+    .commonDialog_title {
+        width: 72%;
+        margin: auto;
+        .item {
+            width: 33.33%
+        }
+        position: absolute;
+        top: 18%;
+        left: 14%;
+    }
+    .commonDialog_content {
+        height: 77%;
+        padding: 20px 30px;
+        position: absolute;
+        top: 27%;
+        left: 6.5%;
+        .title {
+            font-size: 24px;
+            color: #fff;
+            overflow: hidden;
+            span {
+                font-size: 30px;
+                color: #6ad14e;
+            }
+        }
+        .list {
+            overflow: scroll;
+            height: 81%;
+            .list_item {
+                @include background('../imgs/item_bg2.png');
+                height: initial;
+                overflow: hidden;
+                padding: 25px 40px;
+                position: relative;
+                text-align: center;
+                margin-bottom: 10px;
+                img.commodity {
+                    float: left;
+                }
+                img.commodity1 {
+                    width: 20%
+                }
+                .desc {
+                    font-size: 24px;
+                    color: #fff;
+                    width: 44%;
+                    display: inline-block;
+                    margin-top: 10px;
+                    span {
+                        vertical-align: super;
+                    }
+                }
+                .btn {
+                    float: right;
+                    width: 35%;
+                    display: inline-block;
+                    button {
+                        width: 100%;
+                        padding: 10px 15px;
+                        font-size: 24px;
+                        color: #fff;
+                        &:first-child {
+                            margin-bottom: 5px;
+                            @include background('../imgs/character_introbtn.png');
+                        }
+                        &:last-child {
+                            @include background('../imgs/common_send.png');
+                        }
+                    }
+                }
+            }
+        }
+        .footer {
+            position: relative;
+            padding: 10px 0;
+            color: #fff;
+            font-size: 24px;
+            overflow: hidden;
+            .baoshi_count {
+                float: right;
+            }
+            span {
+                position: absolute;
+                z-index: 151;
+                right: 20%;
+                top: 30%;
+                font-size: 26px;
+            }
+        }
+    }
+}
+
+.shopDialog1 {
+    @include background('../imgs/box_bg9.png');
+    .commonDialog_title {
+        width: 72%;
+        margin: auto;
+        .item {
+            width: 33.33%
+        }
+        position: absolute;
+        top: 18%;
+        left: 14%;
+    }
+    .commonDialog_content {
+        height: 77%;
+        padding: 20px 30px;
+        position: absolute;
+        top: 27%;
+        left: 6.5%;
+        .title {
+            font-size: 24px;
+            color: #fff;
+            overflow: hidden;
+            span {
+                font-size: 30px;
+                color: #6ad14e;
+            }
+        }
+        .list {
+            overflow: scroll;
+            height: 81%;
+            .list_item {
+                @include background('../imgs/item_bg2.png');
+                height: initial;
+                overflow: hidden;
+                padding: 25px 35px;
+                position: relative;
+                text-align: center;
+                margin-bottom: 10px;
+                line-height: 60px;
+                .box {
+                    width: 74px;
+                    height: 74px;
+                    padding: 10px;
+                    float: left;
+                    @include background('../imgs/beijing.jpg');
+                }
+                span {
+                    float: left;
+                    font-size: 26px;
+                    color: #f3d49b;
+                    margin-left: 10px;
+                    vertical-align: middle
+                }
+                button {
+                    padding: 15px 35px;
+                    font-size: 24px;
+                    color: #fff;
+                    float: right;
+                    text-align: center;
+                    @include background('../imgs/common_btn.png');
+                    img {
+                        width: 35%
+                    }
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .footer {
+            position: relative;
+            padding: 10px 0;
+            color: #fff;
+            font-size: 24px;
+            overflow: hidden;
+            .baoshi_count {
+                float: right;
+            }
+            span {
+                position: absolute;
+                z-index: 151;
+                right: 20%;
+                top: 30%;
+                font-size: 26px;
+            }
+        }
+    }
+}
+
+.shopDialog2 {
+    @include background('../imgs/box_bg10.png');
+    .commonDialog_title {
+        width: 72%;
+        margin: auto;
+        .item {
+            width: 33.33%
+        }
+        position: absolute;
+        top: 20%;
+        left: 14%;
+    }
+    .commonDialog_content {
+        height: 69%;
+        padding: 20px 30px;
+        position: absolute;
+        top: 27%;
+        left: 6.5%;
+        .list {
+            overflow: scroll;
+            height: 81%;
+            .list_item {
+                @include background('../imgs/item_bg2.png');
+                height: initial;
+                overflow: hidden;
+                padding: 25px 35px;
+                position: relative;
+                text-align: center;
+                margin-bottom: 10px;
+                line-height: 60px;
+                .sub_item {
+                    overflow: hidden;
+                    float: left;
+                    width: 20%;
+                }
+                .box {
+                    width: 74px;
+                    height: 74px;
+                    padding: 10px;
+                    float: left;
+                    @include background('../imgs/beijing.jpg');
+                }
+                span {
+                    float: left;
+                    font-size: 26px;
+                    color: #f3d49b;
+                    margin-left: 10px;
+                    vertical-align: middle
+                }
+                img {
+                    float: left;
+                    display: block;
+                    margin: auto;
+                }
+                .sub_item1 {
+                    overflow: hidden;
+                    float: right;
+                    width: 35%;
+                    img {
+                        float: initial
+                    }
+                }
+                img.duihuan {
+                    @include verHorCenter();
+                    top: 35%;
+                    width: 32%;
+                    left: 45%;
+                }
+            }
+        }
+        .footer {
+            position: relative;
+            padding: 10px 0;
+            color: #fff;
+            font-size: 24px;
+            overflow: hidden;
+            .baoshi_count {
+                float: right;
+            }
+            span {
+                position: absolute;
+                z-index: 151;
+                right: 20%;
+                top: 30%;
+                font-size: 26px;
+            }
+        }
+    }
+}
+
+.elixirDialog {
+    @include verHorCenter();
+    height: 70%;
+    z-index: 155;
+    width: 80%;
+    .info {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        z-index: 156;
+        right: -5%;
+        top: 5%;
+    }
+    .elixir_title {
+        overflow: hidden;
+        .item {
+            display: inline-block;
+            float: left;
+            width: 27%;
+            &:nth-child(2) {
+                margin: 0 8%;
+            }
+            position: relative;
+            span {
+                font-size: 24px;
+                color: #fff;
+                @include vertical();
+                left: 50%;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .elixir_content {
+        height: 90%;
+        margin-top: 20px;
+        @include background('../imgs/guizi.png');
+        position: relative;
+        p {
+            position: absolute;
+            width: 100%;
+            &:nth-child(1) {
+                top: 3%;
+                height: 23%;
+            }
+            &:nth-child(2) {
+                top: 29%;
+                height: 21%;
+            }
+            &:nth-child(3) {
+                top: 53%;
+                height: 22%;
+            }
+            &:nth-child(4) {
+                top: 78%;
+                height: 21%;
+            }
+            img {
+                width: 21%;
+                height: 100%;
+                &:nth-child(1) {
+                    margin-left: 7%;
+                }
+                &:nth-child(2) {
+                    margin-left: 7%;
+                    margin-right: 7%;
+                }
+            }
+        }
+    }
+    .elixir_footer {
+        overflow: hidden;
+        position: relative;
+        top: -3%;
+        img {
+            width: 22%;
+            float: left;
+            border: none;
+        }
+        .small {
+            margin-top: 3%;
+        }
+        .big:nth-child(2) {
+            width: 25%;
+            margin: 0 2%;
+        }
+        .big:nth-child(3) {
+            width: 25%;
+            margin-right: 2%
+        }
+    }
+}
+
+.elixirDialog1 {
+    width: 80%;
+    z-index: 160;
+    position: absolute;
+    @include verHorCenter();
+    @include background('../imgs/box_bg4.png');
+    .title {
+        text-align: center;
+        span {
+            font-size: 2em;
+            font-weight: 900;
+            color: #f3d49b;
+            -webkit-text-stroke: 1px #9e7c32;
+        }
+    }
+    .desc {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+        color: #f3d49b;
+        -webkit-text-stroke: 1px #9e7c32;
+        margin: 30px 0;
+    }
+    .content {
+        width: 90%;
+        margin: auto;
+        overflow: scroll;
+        @include background('../imgs/box_bg5.png');
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 5%;
+        font-size: 24px;
+        color: #fff;
+        border-radius: 15px;
+        a {
+            width: 12%;
+            display: inherit;
+            float: left;
+            &.bottom {
+                margin-top: 2%;
+            }
+        }
+        img.on {
+            position: absolute;
+            left: 0;
+        }
+        p {
+            margin-top: 10px;
+            font-size: 28px;
+            position: relative;
+        }
+        span {
+            vertical-align: super;
+        }
+        .text {
+            color: #f3d49b;
+        }
+    }
+    .goumai {
+        button {
+            padding: 20px 60px;
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            @include background('../imgs/common_btn.png');
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .close {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        right: -5%;
+        top: -5%;
+        z-index: 160;
+        @include background('../imgs/close1.png');
+    }
+}
+
+.elixirDialog2 {
+    width: 80%;
+    z-index: 160;
+    position: absolute;
+    @include verHorCenter();
+    @include background('../imgs/box_bg4.png');
+    .title {
+        text-align: center;
+        span {
+            font-size: 2em;
+            font-weight: 900;
+            color: #f3d49b;
+            -webkit-text-stroke: 1px #9e7c32;
+        }
+    }
+    .desc {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+        color: #f3d49b;
+        -webkit-text-stroke: 1px #9e7c32;
+        margin: 30px 0;
+    }
+    .content {
+        width: 90%;
+        margin: auto;
+        overflow: scroll;
+        @include background('../imgs/box_bg5.png');
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 5%;
+        font-size: 24px;
+        color: #fff;
+        border-radius: 15px;
+        a {
+            width: 12%;
+            display: inherit;
+            float: left;
+            &.bottom {
+                margin-top: 2%;
+            }
+        }
+        img.on {
+            position: absolute;
+            left: 0;
+        }
+        p {
+            margin-top: 10px;
+            font-size: 28px;
+            position: relative;
+        }
+        span {
+            vertical-align: super;
+        }
+        .text {
+            color: #f3d49b;
+        }
+    }
+    .huishou {
+        button {
+            padding: 20px 60px;
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            @include background('../imgs/common_btn.png');
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    .close {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        right: -5%;
+        top: -5%;
+        z-index: 160;
+        @include background('../imgs/close1.png');
+    }
+}
+
+.elixirDialog3 {
+    width: 80%;
+    height: 70%;
+    z-index: 160;
+    position: absolute;
+    @include verHorCenter();
+    @include background('../imgs/box_bg4.png');
+    .title {
+        text-align: center;
+        height: 10%;
+        position: relative;
+        span {
+            font-size: 2em;
+            font-weight: 900;
+            color: #f3d49b;
+            -webkit-text-stroke: 1px #9e7c32;
+            @include verHorCenter();
+        }
+    }
+    .desc {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+        color: #f3d49b;
+        -webkit-text-stroke: 1px #9e7c32;
+        margin: 30px 0;
+    }
+    .content {
+        width: 90%;
+        height: 82%;
+        margin: auto;
+        overflow: hidden;
+        font-size: 24px;
+        color: #fff;
+        border-radius: 15px;
+        margin-top: 20px;
+        ul {
+            overflow: scroll;
+            li {
+                height: initial;
+                overflow: hidden;
+                margin-bottom: 20px;
+                position: relative;
+                padding: 15px;
+                @include background('../imgs/item_bg.png');
+                img {
+                    width: 25%;
+                    float: left;
+                }
+                button {
+                    padding: 15px 50px;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 24px;
+                    float: right;
+                    @include vertical();
+                    right: 10px;
+                    @include background('../imgs/common_btn.png');
+                }
+                .username {
+                    width: 38%;
+                    display: inline-block;
+                    float: left;
+                    margin-left: 20px;
+                    color: #f3d49b;
+                    -webkit-text-stroke: 1px #9e7c32;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    .close {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        right: -5%;
+        top: -5%;
+        z-index: 160;
+        @include background('../imgs/close1.png');
+    }
+}
+
+.characterDialog {
+    position: absolute;
+    z-index: 110;
+    width: 100vw;
+    height: 94%;
+    margin-top: 10%;
+    .lingyao {
+        position: absolute;
+        right: 20px;
+        top: -3%;
+        @include background('../imgs/lingyao.png');
+        padding: 30px 65px;
+    }
+    .progress {
+        width: 40%;
+        margin: auto;
+        background: #fff;
+        height: 14px;
+        border-radius: 25px;
+        padding: 2px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        .progress_active {
+            width: 80%;
+            background: #f50000;
+            height: 10px;
+            border-radius: 25px;
+        }
+    }
+    .character {
+        text-align: center;
+        position: relative;
+        img {
+            margin-left: 12%;
+        }
+        .base_msg {
+            width: 35%;
+            height: 36%;
+            @include vertical();
+            left: 5%;
+            font-size: 24px;
+            li {
+                height: initial;
+                text-align: left;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+                @include background("../imgs/text_bg2.png");
+                .name {
+                    color: #ffc400;
+                }
+                .value {
+                    color: #fff;
+                }
+            }
+        }
+        .jineng_list {
+            @include vertical();
+            right: 0;
+            width: 35%;
+            button {
+                padding: 15px 50px;
+                display: block;
+                margin: auto;
+                color: #fff;
+                font-size: 24px;
+            }
+            .liaoshang {
+                margin-bottom: 20px;
+                @include background("../imgs/common_send.png");
+            }
+            .tupo {
+                @include background("../imgs/character_introbtn.png");
+            }
+        }
+    }
+    .message {
+        width: 90%;
+        margin: auto;
+        @include background("../imgs/box_bg11.png");
+        padding: 25px;
+        margin-top: 20px;
+        ul {
+            margin-top: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            li {
+                height: initial;
+                float: left;
+                width: 33.33%;
+                font-size: 24px;
+                color: #fff;
+                position: relative;
+                img {
+                    position: absolute;
+                    left: 0;
+                    &.shoudan {
+                        left: -15px
+                    }
+                    &.peiyuandan {
+                        left: -10px;
+                    }
+                }
+                span {
+                    padding: 5px;
+                    padding-left: 25%;
+                    display: block;
+                    @include background("../imgs/text_bg3.png");
+                }
+            }
+        }
+        .card {
+            .card_item {
+                width: 48%;
+                display: inline-block;
+                float: left;
+                margin-bottom: 20px;
+                @include background("../imgs/box_bg12.png");
+                padding: 20px;
+                font-size: 24px;
+                &:nth-child(1) {
+                    margin-right: 4%;
+                }
+                .title {
+                    text-align: center;
+                    margin: 20px 0;
+                    span {
+                        color: #fff;
+                        font-size: 22px
+                    }
+                }
+                .desc {
+                    color: #29fefa;
+                    margin-bottom: 30px;
+                }
+                button {
+                    padding: 15px 50px;
+                    @include background("../imgs/character_introbtn.png");
+                    display: block;
+                    margin: auto;
+                    p {
+                        color: #fff;
+                        font-size: 24px;
+                    }
+                    .shengji {
+                        font-size: 28px;
+                        color: #f3d49b;
+                        -webkit-text-stroke: 1px #9e7c32;
+                    }
+                }
+            }
+        }
+        .text {
+            color: #af3a26;
+            font-size: 26px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+    }
+}
+
+.zengsongDialog {
+    width: 80%;
+    z-index: 160;
+    position: absolute;
+    @include verHorCenter();
+    @include background('../imgs/box_bg2.png');
+    .title {
+        padding: 5%;
+        height: 140px;
+        line-height: 90px;
+        .article {
+            width: 90px;
+            height: 90px;
+            position: relative;
+            margin: auto;
+            display: inline-block;
+            float: left;
+            @include background('../imgs/beijing.jpg');
+            img {
+                @include verHorCenter();
+            }
+        }
+        span {
+            color: #291800;
+            font-size: 26px;
+            margin-left: 20px;
+        }
+    }
+    .desc {
+        text-indent: 2rem;
+        font-size: 24px;
+        color: #fff;
+        height: 200px;
+        overflow: scroll;
+        background-color: #7f7359;
+        width: 97.5%;
+        margin: auto;
+        padding: 20px 0;
+    }
+    .content {
+        padding: 5%;
+        p {
+            font-size: 24px;
+            color: #fff;
+        }
+    }
+    .sell {
+        width: 40%;
+        padding: 25px 20px;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        margin: auto;
+        @include background('../imgs/common_btn.png');
+    }
+    .all_money {
+        text-align: center;
+        font-size: 24px;
+        margin: 20px 0;
+        span {
+            vertical-align: super;
+            &:first-child {
+                color: #291800;
+            }
+        }
+        img {
+            width: 8%;
+            margin-left: 10px;
+        }
+    }
+    .btn_list {
+        position: relative;
+        button {
+            width: 20%;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            @include background('../imgs/btn_bg.png');
+            &:nth-child(2) {
+                margin-left: 2.5px;
+            }
+            &:nth-child(5) {
+                margin-left: 2.5px;
+            }
+        }
+        span {
+            font-size: 24px;
+            color: #fff;
+            background: #5f3414;
+            padding: 10px 20px;
+            // position: absolute;
+            // @include verHorCenter();
+        }
+    }
+    .close {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        right: -5%;
+        top: -5%;
+        z-index: 160;
+        @include background('../imgs/close1.png');
+    }
+}
+
+.bubble {
+    color: #000;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 4px;
+    height: auto;
+    border: solid 1px #74694a;
+    border-radius: 15px;
+    background-color: #b19c7c;
+    color: #fff;
+    font-size: 24px;
+    padding: 20px;
+    &:before {
+        content: '';
+        position: absolute;
+        left: -11px;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        background-color: #b19c7c;
+        border-bottom: solid 1px #74694a;
+        border-right: solid 1px #74694a;
+        z-index: 100
+    }
+}
+
+.bubble1 {
+    margin-top: 4px;
+    height: auto;
+    border: solid 1px #74694a;
+    border-radius: 15px;
+    background-color: #b19c7c;
+    color: #fff;
+    font-size: 24px;
+    padding: 20px;
+    position: absolute;
+    margin-right: 20px;
+    &:before {
+        content: '';
+        position: absolute;
+        right: -4%;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(-45deg);
+        background-color: #b19c7c;
+        border-bottom: solid 1px #74694a;
+        border-right: solid 1px #74694a;
+        z-index: 100;
+    }
+}
+
+.debrisBubble {
+    z-index: 150;
+    margin-left: 35%;
+    margin-top: -2%;
+    background: rgba(0, 0, 0, .6);
+}
+
+.debrisBubble {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 4px;
+    height: auto;
+    border: solid 1px #74694a;
+    border-radius: 15px;
+    background-color: #b19c7c;
+    color: #fff;
+    font-size: 24px;
+    padding: 20px;
+    z-index: 150;
+    margin-left: 35%;
+    margin-top: -2%;
+    background: rgba(0, 0, 0, .9);
+    &:before {
+        content: '';
+        position: absolute;
+        left: -11px;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        background-color: rgba(0, 0, 0, .9);
+        border-bottom: solid 1px rgba(0, 0, 0, .9);
+        border-right: solid 1px rgba(0, 0, 0, .9);
+        z-index: 100
+    }
+}
