@@ -70,8 +70,10 @@
 
 .commonDialog_content {
     width: 87%;
+    height: 78%;
     margin: auto;
     padding-top: 30px;
+    overflow: scroll;
     .chat {
         position: relative;
         .chat_item_user1 {
@@ -79,6 +81,7 @@
             width: 95%;
             margin: auto;
             margin-bottom: 30px;
+            height: initial;
             .left {
                 float: left;
                 width: 25%;
@@ -116,6 +119,7 @@
             padding: 0 20px;
             overflow: hidden;
             margin-bottom: 30px;
+            height: initial;
             .right {
                 float: right;
                 width: 25%;
@@ -198,47 +202,63 @@
     }
 }
 
+#newsDialog1 {
+    height: 82%;
+    .commonDialog_content {
+        padding: 0;
+        width: 91%;
+        padding: 0 20px;
+        height: 82%;
+        margin-top: 5%;
+    }
+}
+
 .msgDialog {
     @include background('../imgs/common_box3.png');
-    .commonDialog_content .chat .chat_item_user1 {
-        @include background('../imgs/box_bg.png');
-        padding: 20px;
-        border-radius: 20px;
-        .left {
-            img {
-                border: none
-            }
-        }
-        .right {
-            .username {
-                color: #dac461;
-                margin-bottom: 20px;
-                font-size: 28px;
-                span {
-                    color: #70c3d3;
+    .commonDialog_content {
+        height: 80%;
+        margin-top: 5%;
+        padding-top: 0;
+        .chat .chat_item_user1 {
+            @include background('../imgs/box_bg.png');
+            padding: 20px;
+            border-radius: 20px;
+            .left {
+                img {
+                    border: none
                 }
             }
-            .agree {
-                font-size: 24px;
-                padding: 15px 50px;
-                color: #fff;
-                @include background('../imgs/common_send.png');
-                margin-bottom: 20px;
-            }
-            .refuse {
-                font-size: 24px;
-                padding: 15px 50px;
-                color: #fff;
-                @include background('../imgs/character_introbtn.png');
-                margin-bottom: 20px;
-            }
-            .time {
-                border-top: 1px solid #fff;
-                font-size: 28px;
-                text-align: right;
-                padding-top: 10px;
-                padding-right: 20px;
-                color: #291800;
+            .right {
+                .username {
+                    color: #dac461;
+                    margin-bottom: 20px;
+                    font-size: 28px;
+                    span {
+                        color: #70c3d3;
+                    }
+                }
+                .agree {
+                    font-size: 24px;
+                    padding: 15px 50px;
+                    color: #fff;
+                    @include background('../imgs/common_send.png');
+                    margin-bottom: 20px;
+                }
+                .refuse {
+                    font-size: 24px;
+                    padding: 15px 50px;
+                    color: #fff;
+                    @include background('../imgs/character_introbtn.png');
+                    margin-bottom: 20px;
+                }
+                .time {
+                    border-top: 1px solid #fff;
+                    font-size: 28px;
+                    text-align: right;
+                    padding-top: 10px;
+                    padding-right: 20px;
+                    color: #291800;
+                }
             }
         }
     }
@@ -246,42 +266,49 @@
 
 .msgDialog1 {
     @include background('../imgs/common_box4.png');
-    .commonDialog_content .chat .chat_item_user1 {
-        @include background('../imgs/box_bg.png');
-        padding: 30px;
-        border-radius: 20px;
-        .left {
-            width: 20%;
-            img {
-                border: none;
-                width: 80%;
-                border-radius: initial;
-            }
-        }
-        .right {
-            width: 80%;
-            .username {
-                color: #dac461;
-                letter-spacing: 1px;
-                font-size: 28px;
-                span {
-                    color: #70c3d3;
+    height: 82%;
+    .commonDialog_content {
+        padding: 0;
+        margin-top: 5%;
+        height: 80%;
+        .chat .chat_item_user1 {
+            @include background('../imgs/box_bg.png');
+            padding: 30px;
+            border-radius: 20px;
+            .left {
+                width: 20%;
+                img {
+                    border: none;
+                    width: 80%;
+                    border-radius: initial;
                 }
             }
-            .time {
-                border-top: 1px solid #fff;
-                font-size: 28px;
-                text-align: right;
-                padding-top: 10px;
-                padding-right: 20px;
-                margin-top: 10px;
-                color: #291800;
+            .right {
+                width: 80%;
+                .username {
+                    color: #dac461;
+                    letter-spacing: 1px;
+                    font-size: 28px;
+                    span {
+                        color: #70c3d3;
+                    }
+                }
+                .time {
+                    border-top: 1px solid #fff;
+                    font-size: 28px;
+                    text-align: right;
+                    padding-top: 10px;
+                    padding-right: 20px;
+                    margin-top: 10px;
+                    color: #291800;
+                }
             }
         }
     }
 }
 
 .bagDialog {
+    height: 90%;
     @include background('../imgs/common_box3.png');
     .commonDialog_content {
         width: 90%;
@@ -313,8 +340,7 @@
                     font-size: 26px;
                     color: #291800;
                     font-weight: 500;
-                    margin-top: 20px;
-                    margin-bottom: 10px;
+                    margin: 5px 0;
                 }
                 .article_number {
                     width: 80%;
@@ -322,7 +348,7 @@
                     font-size: 20px;
                     color: #fff;
                     @include background('../imgs/text_bg.png');
-                    margin-bottom: 30px;
+                    margin-bottom: 20px;
                 }
                 .buy {
                     width: 80%;
@@ -518,9 +544,9 @@
 .bagDialog2 {
     width: 80%;
     z-index: 160;
-    position: absolute;
     @include verHorCenter();
     @include background('../imgs/box_bg2.png');
+    position: fixed;
     .title {
         padding: 5%;
         height: 140px;
@@ -750,25 +776,32 @@
             .list_item {
                 height: initial;
                 overflow: hidden;
-                padding: 15px;
+                padding: 18px;
                 position: relative;
                 @include background('../imgs/item_bg.png');
-                img.headdress {
+                .badge {
                     @include vertical();
+                    text-align: center;
+                    font-size: 24px;
+                }
+                img.headdress {
+                    margin-bottom: 5px;
+                    width: 80%;
+                    //@include vertical();
                 }
                 img.avatar {
                     @include vertical();
-                    left: 85px;
-                    width: 20%;
+                    left: 80px;
+                    width: 22%;
                     border: 3px solid #6ad14e;
                     border-radius: 50%;
                 }
                 span.number {
-                    position: absolute;
-                    bottom: 0;
-                    font-size: 20px;
-                    bottom: 5%;
-                    left: 6%;
+                    // position: absolute;
+                    // bottom: 0;
+                    // font-size: 20px;
+                    // bottom: 5%;
+                    // left: 6%;
                 }
                 .desc {
                     @include vertical();
@@ -833,6 +866,12 @@
                 padding: 15px;
                 position: relative;
                 @include background('../imgs/item_bg.png');
+                span.number {
+                    @include vertical();
+                    font-size: 26px;
+                    color: #291800;
+                    margin-left: 15px;
+                }
                 img.headdress {
                     @include vertical();
                 }
@@ -842,13 +881,6 @@
                     width: 20%;
                     border: 3px solid #6ad14e;
                     border-radius: 50%;
-                }
-                span.number {
-                    position: absolute;
-                    bottom: 0;
-                    font-size: 20px;
-                    bottom: 5%;
-                    left: 6%;
                 }
                 .desc {
                     @include vertical();
@@ -888,8 +920,8 @@
     width: 80%;
     height: 50%;
     z-index: 160;
-    position: absolute;
     @include verHorCenter();
+    position: fixed;
     @include background('../imgs/box_bg4.png');
     .title {
         text-align: center;
@@ -1138,7 +1170,7 @@
             width: 33.33%
         }
         position: absolute;
-        top: 20%;
+        top: 18%;
         left: 14%;
     }
     .commonDialog_content {
@@ -1147,9 +1179,10 @@
         position: absolute;
         top: 27%;
         left: 6.5%;
+        overflow: hidden;
         .list {
             overflow: scroll;
-            height: 81%;
+            height: 92%;
             .list_item {
                 @include background('../imgs/item_bg2.png');
                 height: initial;
@@ -1224,6 +1257,7 @@
     height: 70%;
     z-index: 155;
     width: 80%;
+    position: fixed;
     .info {
         width: 70px;
         height: 70px;
@@ -1481,8 +1515,8 @@
     width: 80%;
     height: 70%;
     z-index: 160;
-    position: absolute;
     @include verHorCenter();
+    position: fixed;
     @include background('../imgs/box_bg4.png');
     .title {
         text-align: center;
@@ -1560,7 +1594,7 @@
 }
 
 .characterDialog {
-    position: absolute;
+    position: fixed;
     z-index: 110;
     width: 100vw;
     height: 94%;
@@ -1722,8 +1756,8 @@
 .zengsongDialog {
     width: 80%;
     z-index: 160;
-    position: absolute;
     @include verHorCenter();
+    position: fixed;
     @include background('../imgs/box_bg2.png');
     .title {
         padding: 5%;

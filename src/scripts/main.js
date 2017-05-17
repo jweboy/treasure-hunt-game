@@ -77,9 +77,25 @@
                 location.href = 'fight.html';
             });
 
+
             new Swiper('.swiper-container', {
                 prevButton: '.swiper-button-prev',
                 nextButton: '.swiper-button-next',
+                onTransitionEnd: function(swiper) {
+                    $(swiper.slides).find('.gift').on('touchstart', function() {
+                        $('#debrisGiftDialog').removeClass('hidden');
+                        mask.sibOpen();
+                    });
+
+                    $('#debrisGiftCloseBtn').on('touchstart', function() {
+                        $('#debrisGiftDialog').addClass('hidden');
+                        mask.sibClose();
+                    });
+
+                    $('#debrisGiftDialog').find('.zengsong').on('touchstart', function() {
+                        toastr.success('ok')
+                    });
+                }
             })
         });
     }

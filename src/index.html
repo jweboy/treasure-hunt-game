@@ -30,6 +30,7 @@
             document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
         }
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- 开发环境插入合并打包的css,以下两个注释需要保留 -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -37,7 +38,7 @@
 
 <body>
     <!-- 首屏预加载图片 -->
-    <div class="preloadImg" id="preloadImg">
+    <div class="preloadImg hidden" id="preloadImg">
         <div class="preloadImg__progress">
             <div class="preloadImg__progress--full"></div>
             <div class="preloadImg__progress--active" id="preloadProgress"></div>
@@ -205,8 +206,8 @@
             </div>
         </div>
         <div class="settingDialog__btn">
-            <a href="tel:123456">
-                <button>联系客服</button>
+            <a href="#">
+                <button id="contactBtn">联系客服</button>
             </a>
         </div>
     </div>
@@ -214,10 +215,10 @@
     <div class="commonDialog hidden" id="newsDialog">
         <div class="commonDialog_title">
             <div class="item active">
-                <span>世界</span>
+                <span>世&nbsp;界</span>
             </div>
             <div class="item">
-                <span>动态</span>
+                <span>动&nbsp;态</span>
             </div>
         </div>
         <div class="commonDialog_content">
@@ -256,6 +257,28 @@
                         <img src="imgs/touxiang.png" alt="">
                     </div>
                 </li>
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/touxiang.png" alt="">
+                        <div class="join">加好友</div>
+                    </div>
+                    <div class="right">
+                        <span class="username">用户名</span>
+                        <div class="bubble">
+                            你好!你好!你好!你好!你好!你好!你好!你好!
+                        </div>
+                    </div>
+                </li>
+                <li class="chat_item_user2">
+                    <div class="left">
+                        <div class="bubble1">
+                            你好!你好!你好!你好!你好!你好!你好!你好!
+                        </div>>
+                    </div>
+                    <div class="right">
+                        <img src="imgs/touxiang.png" alt="">
+                    </div>
+                </li>
             </ul>
         </div>
         <div class="commonDialog_footer">
@@ -278,6 +301,15 @@
         </div>
         <div class="commonDialog_content">
             <div class="news-list">
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
+                <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
                 <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
                 <p>恭喜<span class="point">酷鱼</span>开启了24号宝箱，获得了丰厚奖励！</p>
             </div>
@@ -325,6 +357,49 @@
                         </p>
                     </div>
                 </li>
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/touxiang.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>酷鱼</span>请求加你为好友
+                        </p>
+                        <div>
+                            <button class="agree">同意</button>
+                            <button class="refuse">拒绝</button>
+                        </div>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/touxiang.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>酷鱼</span>请求加你为好友
+                        </p>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/touxiang.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>酷鱼</span>请求加你为好友
+                        </p>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -339,6 +414,32 @@
         </div>
         <div class="commonDialog_content">
             <ul class="chat">
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/pennants.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>酷鱼</span>请求加你为好友
+                        </p>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
+                </li>
+                <li class="chat_item_user1">
+                    <div class="left">
+                        <img src="imgs/pennants.png" alt="">
+                    </div>
+                    <div class="right">
+                        <p class="username">
+                            <span>藏宝图</span>将于5月24日下线！将于5月24日下线！将于5月24日下线！
+                        </p>
+                        <p class="time">
+                            5月20号 13:25:30
+                        </p>
+                    </div>
+                </li>
                 <li class="chat_item_user1">
                     <div class="left">
                         <img src="imgs/pennants.png" alt="">
@@ -722,7 +823,10 @@
             </div>
             <ul class="list">
                 <li class="list_item">
-                    <img class="headdress" src="imgs/level1.png" alt="">
+                    <div class="badge">
+                        <img class="headdress" src="imgs/headdress.png" alt="">
+                        <p class="number">88</p>
+                    </div>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -734,7 +838,10 @@
                     </div>
                 </li>
                 <li class="list_item">
-                    <img class="headdress" src="imgs/level1.png" alt="">
+                    <div class="badge">
+                        <img class="headdress" src="imgs/headdress1.png" alt="">
+                        <p class="number">88</p>
+                    </div>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -746,7 +853,10 @@
                     </div>
                 </li>
                 <li class="list_item">
-                    <img class="headdress" src="imgs/headdress.png" alt="">
+                    <div class="badge">
+                        <img class="headdress" src="imgs/headdress1.png" alt="">
+                        <p class="number">88</p>
+                    </div>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -758,7 +868,10 @@
                     </div>
                 </li>
                 <li class="list_item">
-                    <img class="headdress" src="imgs/headdress1.png" alt="">
+                    <div class="badge">
+                        <img class="headdress" src="imgs/headdress.png" alt="">
+                        <p class="number">88</p>
+                    </div>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -770,7 +883,10 @@
                     </div>
                 </li>
                 <li class="list_item">
-                    <img class="headdress" src="imgs/headdress1.png" alt="">
+                    <div class="badge">
+                        <img class="headdress" src="imgs/headdress1.png" alt="">
+                        <p class="number">88</p>
+                    </div>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -782,7 +898,10 @@
                     </div>
                 </li>
                 <li class="list_item">
-                    <img class="headdress" src="imgs/headdress1.png" alt="">
+                    <div class="badge">
+                        <img class="headdress" src="imgs/headdress.png" alt="">
+                        <p class="number">88</p>
+                    </div>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -852,7 +971,7 @@
                     </div>
                 </li>
                 <li class="list_item">
-                    <img class="headdress" src="imgs/level1.png" alt="">
+                    <span class="number">4</span>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -864,7 +983,7 @@
                     </div>
                 </li>
                 <li class="list_item">
-                    <img class="headdress" src="imgs/level2.png" alt="">
+                    <span class="number">5</span>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -876,7 +995,7 @@
                     </div>
                 </li>
                 <li class="list_item">
-                    <img class="headdress" src="imgs/level3.png" alt="">
+                    <span class="number">6</span>
                     <img class="avatar" src="imgs/touxiang.png" alt="">
                     <div class="desc">
                         <span>一二三四五六七八九</span>
@@ -1395,6 +1514,79 @@
             </div>
         </div>
     </div>
+    <div class="friendDialog4 hidden" id="kefuDialog">
+        <div class="close" id="kefuCloseMsgBtn"></div>
+        <div class="title">
+            <span>客服</span>
+        </div>
+        <div class="content">
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+            <p>我：您好！</p>
+            <p class="friend">薇草：您好！</p>
+        </div>
+        <div class="send">
+            <input type="text">
+            <button>发送</button>
+        </div>
+    </div>
+    <div class="elixirDialog3 hidden" id="debrisGiftDialog">
+        <div class="close" id="debrisGiftCloseBtn"></div>
+        <div class="title">
+            <span>赠送</span>
+        </div>
+        <div class="content">
+            <ul>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+                <li>
+                    <img src="imgs/touxiang.png" alt="">
+                    <div class="username">
+                        一二三四五六七八九
+                    </div>
+                    <button class="zengsong">赠送</button>
+                </li>
+            </ul>
+        </div>
+    </div>
     <!-- /系统设置弹窗 -->
     <!-- 通用遮罩层 -->
     <button class="mask__btn" id="backBtn"></button>
@@ -1412,6 +1604,7 @@
         <span class="mask__text"></span>
     </div>
     <!-- /通用遮罩层 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
     <!-- 开发环境插入合并打包的js,以下两个注释需要保留 -->
     <!-- inject:js -->

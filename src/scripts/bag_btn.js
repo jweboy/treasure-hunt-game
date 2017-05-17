@@ -6,6 +6,7 @@ module.exports = {
         this.buy();
         this.closeBuy();
         this.info()
+        this.zengsong()
     },
     open: function() {
         $('#bagBtn').on('touchstart', function(e) {
@@ -35,5 +36,12 @@ module.exports = {
                 $('#debrisBubble').addClass('hidden')
             }, 3000);
         });
+    },
+    zengsong: function() {
+        // $('#bagDialog1').on('.gift', 'click', function() {
+        //     console.log(0);
+        //     $('#elixirDialog3').removeClass('hidden');
+        //     mask.sibOpen();
+        // });
     }
 }

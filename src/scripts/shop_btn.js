@@ -2,8 +2,8 @@ module.exports = {
     init: function() {
         this.open();
         this.switch();
-        this.openMsg();
-        this.closeMsg();
+        // this.openMsg();
+        // this.closeMsg();
     },
     open: function() {
         $('#shopBtn').on('touchstart', function(e) {
